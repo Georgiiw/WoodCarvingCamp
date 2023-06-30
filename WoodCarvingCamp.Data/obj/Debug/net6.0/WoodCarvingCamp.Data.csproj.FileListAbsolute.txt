@@ -1,0 +1,17 @@
+E:\VS projects\WoodCarvingCamp - CsharpWebCourse Project\WoodCarvingCamp\WoodCarvingCamp\WoodCarvingCamp.Data\bin\Debug\net6.0\WoodCarvingCamp.Data.deps.json
+E:\VS projects\WoodCarvingCamp - CsharpWebCourse Project\WoodCarvingCamp\WoodCarvingCamp\WoodCarvingCamp.Data\bin\Debug\net6.0\WoodCarvingCamp.Data.runtimeconfig.json
+E:\VS projects\WoodCarvingCamp - CsharpWebCourse Project\WoodCarvingCamp\WoodCarvingCamp\WoodCarvingCamp.Data\bin\Debug\net6.0\WoodCarvingCamp.Data.dll
+E:\VS projects\WoodCarvingCamp - CsharpWebCourse Project\WoodCarvingCamp\WoodCarvingCamp\WoodCarvingCamp.Data\bin\Debug\net6.0\WoodCarvingCamp.Data.pdb
+E:\VS projects\WoodCarvingCamp - CsharpWebCourse Project\WoodCarvingCamp\WoodCarvingCamp\WoodCarvingCamp.Data\bin\Debug\net6.0\WoodCarvingCamp.Data.Models.dll
+E:\VS projects\WoodCarvingCamp - CsharpWebCourse Project\WoodCarvingCamp\WoodCarvingCamp\WoodCarvingCamp.Data\bin\Debug\net6.0\WoodCarvingCamp.Data.Models.pdb
+E:\VS projects\WoodCarvingCamp - CsharpWebCourse Project\WoodCarvingCamp\WoodCarvingCamp\WoodCarvingCamp.Data\obj\Debug\net6.0\WoodCarvingCamp.Data.csproj.AssemblyReference.cache
+E:\VS projects\WoodCarvingCamp - CsharpWebCourse Project\WoodCarvingCamp\WoodCarvingCamp\WoodCarvingCamp.Data\obj\Debug\net6.0\WoodCarvingCamp.Data.GeneratedMSBuildEditorConfig.editorconfig
+E:\VS projects\WoodCarvingCamp - CsharpWebCourse Project\WoodCarvingCamp\WoodCarvingCamp\WoodCarvingCamp.Data\obj\Debug\net6.0\WoodCarvingCamp.Data.AssemblyInfoInputs.cache
+E:\VS projects\WoodCarvingCamp - CsharpWebCourse Project\WoodCarvingCamp\WoodCarvingCamp\WoodCarvingCamp.Data\obj\Debug\net6.0\WoodCarvingCamp.Data.AssemblyInfo.cs
+E:\VS projects\WoodCarvingCamp - CsharpWebCourse Project\WoodCarvingCamp\WoodCarvingCamp\WoodCarvingCamp.Data\obj\Debug\net6.0\WoodCarvingCamp.Data.csproj.CoreCompileInputs.cache
+E:\VS projects\WoodCarvingCamp - CsharpWebCourse Project\WoodCarvingCamp\WoodCarvingCamp\WoodCarvingCamp.Data\obj\Debug\net6.0\WoodCarvingCamp.Data.csproj.CopyComplete
+E:\VS projects\WoodCarvingCamp - CsharpWebCourse Project\WoodCarvingCamp\WoodCarvingCamp\WoodCarvingCamp.Data\obj\Debug\net6.0\WoodCarvingCamp.Data.dll
+E:\VS projects\WoodCarvingCamp - CsharpWebCourse Project\WoodCarvingCamp\WoodCarvingCamp\WoodCarvingCamp.Data\obj\Debug\net6.0\refint\WoodCarvingCamp.Data.dll
+E:\VS projects\WoodCarvingCamp - CsharpWebCourse Project\WoodCarvingCamp\WoodCarvingCamp\WoodCarvingCamp.Data\obj\Debug\net6.0\WoodCarvingCamp.Data.pdb
+E:\VS projects\WoodCarvingCamp - CsharpWebCourse Project\WoodCarvingCamp\WoodCarvingCamp\WoodCarvingCamp.Data\obj\Debug\net6.0\WoodCarvingCamp.Data.genruntimeconfig.cache
+E:\VS projects\WoodCarvingCamp - CsharpWebCourse Project\WoodCarvingCamp\WoodCarvingCamp\WoodCarvingCamp.Data\obj\Debug\net6.0\ref\WoodCarvingCamp.Data.dll
