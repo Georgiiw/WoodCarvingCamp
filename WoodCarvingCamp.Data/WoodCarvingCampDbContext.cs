@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace WoodCarvingCamp.Data
 {
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser, IdentityRole<Guid>, Guid>
+    public class WoodCarvingCampDbContext : IdentityDbContext<ApplicationUser, IdentityRole<Guid>, Guid>
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+        public WoodCarvingCampDbContext(DbContextOptions<WoodCarvingCampDbContext> options)
             : base(options)
         {
 

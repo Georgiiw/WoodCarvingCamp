@@ -780,11 +780,22 @@
           "bin/placeholder/WoodCarvingCamp.Data.dll": {}
         }
       },
+      "WoodCarvingCamp.Data.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/WoodCarvingCamp.Data.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WoodCarvingCamp.Data.Common.dll": {}
+        }
+      },
       "WoodCarvingCamp.Data.Models/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.5"
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.5",
+          "WoodCarvingCamp.Data.Common": "1.0.0"
         },
         "compile": {
           "bin/placeholder/WoodCarvingCamp.Data.Models.dll": {}
@@ -2286,6 +2297,11 @@
       "type": "project",
       "path": "../WoodCarvingCamp.Data/WoodCarvingCamp.Data.csproj",
       "msbuildProject": "../WoodCarvingCamp.Data/WoodCarvingCamp.Data.csproj"
+    },
+    "WoodCarvingCamp.Data.Common/1.0.0": {
+      "type": "project",
+      "path": "../WoodCarvingCamp.Data.Common/WoodCarvingCamp.Data.Common.csproj",
+      "msbuildProject": "../WoodCarvingCamp.Data.Common/WoodCarvingCamp.Data.Common.csproj"
     },
     "WoodCarvingCamp.Data.Models/1.0.0": {
       "type": "project",

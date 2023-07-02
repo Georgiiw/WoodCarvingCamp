@@ -278,6 +278,16 @@
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
         }
+      },
+      "WoodCarvingCamp.Data.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/WoodCarvingCamp.Data.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WoodCarvingCamp.Data.Common.dll": {}
+        }
       }
     }
   },
@@ -727,11 +737,17 @@
         "system.runtime.compilerservices.unsafe.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "WoodCarvingCamp.Data.Common/1.0.0": {
+      "type": "project",
+      "path": "../WoodCarvingCamp.Data.Common/WoodCarvingCamp.Data.Common.csproj",
+      "msbuildProject": "../WoodCarvingCamp.Data.Common/WoodCarvingCamp.Data.Common.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.5"
+      "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.5",
+      "WoodCarvingCamp.Data.Common >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -765,7 +781,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "E:\\VS projects\\WoodCarvingCamp - CsharpWebCourse Project\\WoodCarvingCamp\\WoodCarvingCamp\\WoodCarvingCamp.Data.Common\\WoodCarvingCamp.Data.Common.csproj": {
+              "projectPath": "E:\\VS projects\\WoodCarvingCamp - CsharpWebCourse Project\\WoodCarvingCamp\\WoodCarvingCamp\\WoodCarvingCamp.Data.Common\\WoodCarvingCamp.Data.Common.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

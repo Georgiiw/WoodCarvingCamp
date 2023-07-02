@@ -10,4 +10,8 @@
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.5" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\WoodCarvingCamp.Data.Common\WoodCarvingCamp.Data.Common.csproj" />
+  </ItemGroup>
+
 </Project>
