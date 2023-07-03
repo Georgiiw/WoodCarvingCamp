@@ -542,9 +542,15 @@
           "WoodCarvingCamp.Data.dll": {}
         }
       },
+      "WoodCarvingCamp.Data.Common/1.0.0": {
+        "runtime": {
+          "WoodCarvingCamp.Data.Common.dll": {}
+        }
+      },
       "WoodCarvingCamp.Data.Models/1.0.0": {
         "dependencies": {
-          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.5"
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.5",
+          "WoodCarvingCamp.Data.Common": "1.0.0"
         },
         "runtime": {
           "WoodCarvingCamp.Data.Models.dll": {}
@@ -923,6 +929,11 @@
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
     },
     "WoodCarvingCamp.Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "WoodCarvingCamp.Data.Common/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

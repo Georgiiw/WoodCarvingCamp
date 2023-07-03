@@ -15,3 +15,5 @@ E:\VS projects\WoodCarvingCamp - CsharpWebCourse Project\WoodCarvingCamp\WoodCar
 E:\VS projects\WoodCarvingCamp - CsharpWebCourse Project\WoodCarvingCamp\WoodCarvingCamp\WoodCarvingCamp.Data\obj\Debug\net6.0\WoodCarvingCamp.Data.pdb
 E:\VS projects\WoodCarvingCamp - CsharpWebCourse Project\WoodCarvingCamp\WoodCarvingCamp\WoodCarvingCamp.Data\obj\Debug\net6.0\WoodCarvingCamp.Data.genruntimeconfig.cache
 E:\VS projects\WoodCarvingCamp - CsharpWebCourse Project\WoodCarvingCamp\WoodCarvingCamp\WoodCarvingCamp.Data\obj\Debug\net6.0\ref\WoodCarvingCamp.Data.dll
+E:\VS projects\WoodCarvingCamp - CsharpWebCourse Project\WoodCarvingCamp\WoodCarvingCamp\WoodCarvingCamp.Data\bin\Debug\net6.0\WoodCarvingCamp.Data.Common.dll
+E:\VS projects\WoodCarvingCamp - CsharpWebCourse Project\WoodCarvingCamp\WoodCarvingCamp\WoodCarvingCamp.Data\bin\Debug\net6.0\WoodCarvingCamp.Data.Common.pdb

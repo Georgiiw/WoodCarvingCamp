@@ -10,3 +10,6 @@ E:\VS projects\WoodCarvingCamp - CsharpWebCourse Project\WoodCarvingCamp\WoodCar
 E:\VS projects\WoodCarvingCamp - CsharpWebCourse Project\WoodCarvingCamp\WoodCarvingCamp\WoodCarvingCamp.Data.Models\obj\Debug\net6.0\refint\WoodCarvingCamp.Data.Models.dll
 E:\VS projects\WoodCarvingCamp - CsharpWebCourse Project\WoodCarvingCamp\WoodCarvingCamp\WoodCarvingCamp.Data.Models\obj\Debug\net6.0\WoodCarvingCamp.Data.Models.pdb
 E:\VS projects\WoodCarvingCamp - CsharpWebCourse Project\WoodCarvingCamp\WoodCarvingCamp\WoodCarvingCamp.Data.Models\obj\Debug\net6.0\ref\WoodCarvingCamp.Data.Models.dll
+E:\VS projects\WoodCarvingCamp - CsharpWebCourse Project\WoodCarvingCamp\WoodCarvingCamp\WoodCarvingCamp.Data.Models\bin\Debug\net6.0\WoodCarvingCamp.Data.Common.dll
+E:\VS projects\WoodCarvingCamp - CsharpWebCourse Project\WoodCarvingCamp\WoodCarvingCamp\WoodCarvingCamp.Data.Models\bin\Debug\net6.0\WoodCarvingCamp.Data.Common.pdb
+E:\VS projects\WoodCarvingCamp - CsharpWebCourse Project\WoodCarvingCamp\WoodCarvingCamp\WoodCarvingCamp.Data.Models\obj\Debug\net6.0\WoodCarvingCamp.Data.Models.csproj.CopyComplete

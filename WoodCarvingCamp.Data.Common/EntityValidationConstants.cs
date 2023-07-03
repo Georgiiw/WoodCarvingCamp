@@ -29,5 +29,13 @@
             public const int DescriptionMaxLength = 150;
             public const int ImageUrlMaxLength = 2048;
         }
+        public static class CarvingCourseValidations
+        {
+            public const int NameMinLength = 10;
+            public const int NameMaxLength = 100;
+            public const int DescriptionMinLength = 50;
+            public const int DescriptionMaxLength = 500;
+            public const int ImageUrlMaxLength = 2048;
+        }
     }
 }

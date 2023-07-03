@@ -20,6 +20,13 @@ namespace WoodCarvingCamp
             builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = false)
                 .AddEntityFrameworkStores<WoodCarvingCampDbContext>();
 
+            builder.Services.Configure<IdentityOptions>(options =>
+            {
+                options.Password.RequireDigit = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequireNonAlphanumeric = false;
+            });
+
             builder.Services.AddControllersWithViews();
 
             WebApplication app = builder.Build();

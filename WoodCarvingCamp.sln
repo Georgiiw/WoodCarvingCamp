@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32519.379
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WoodCarvingCamp", "WoodCarvingCamp\WoodCarvingCamp.csproj", "{866C757A-4092-4DB3-ABA7-25FC0C8FD363}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WoodCarvingCamp.Web", "WoodCarvingCamp\WoodCarvingCamp.Web.csproj", "{866C757A-4092-4DB3-ABA7-25FC0C8FD363}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{75C46187-66A8-41EC-B3EC-854123154610}"
 EndProject
@@ -13,7 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{FAEB2F12-AB8
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WoodCarvingCamp.Data.Models", "WoodCarvingCamp.Data.Models\WoodCarvingCamp.Data.Models.csproj", "{F9BD27E4-FBEC-4E55-9F7F-4C31911B043B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WoodCarvingCamp.Data.Common", "WoodCarvingCamp.Data.Common\WoodCarvingCamp.Data.Common.csproj", "{60178428-E882-4960-900B-0F4E20769F71}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WoodCarvingCamp.Data.Common", "WoodCarvingCamp.Data.Common\WoodCarvingCamp.Data.Common.csproj", "{60178428-E882-4960-900B-0F4E20769F71}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
