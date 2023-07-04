@@ -13,10 +13,7 @@ namespace WoodCarvingCamp.Data.Models
 
         [Required]
         [MaxLength(DescriptionMaxLength)]
-        public string Description { get; set; } = null!;
-
-        [ForeignKey(nameof(Creator))]
-        public int UserId { get; set; }
+        public string Description { get; set; } = null!;   
 
         [ForeignKey(nameof(Creator))]
         public Guid CreatorId { get; set; }

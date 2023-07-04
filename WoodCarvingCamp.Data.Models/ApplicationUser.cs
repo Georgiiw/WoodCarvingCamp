@@ -1,6 +1,7 @@
 ﻿namespace HouseRentingSystem.Data.Models
 {
     using Microsoft.AspNetCore.Identity;
+    using WoodCarvingCamp.Data.Models;
 
     /// <summary>
     /// This is custom user class that works with the default ASP.NET Core Identity.
@@ -11,9 +12,10 @@
         public ApplicationUser()
         {
             this.Id = Guid.NewGuid();
-           
+            this.CarvingCourses = new HashSet<CarvingCourse>();
         }
 
+        public virtual ICollection<CarvingCourse> CarvingCourses { get; set; }
 
     }
 }
