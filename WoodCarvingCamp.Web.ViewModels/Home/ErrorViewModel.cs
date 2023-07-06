@@ -1,4 +1,4 @@
-namespace WoodCarvingCamp.Models
+namespace WoodCarvingCamp.Web.ViewModels
 {
     public class ErrorViewModel
     {

@@ -1,4 +1,4 @@
-﻿using HouseRentingSystem.Data.Models;
+﻿using WoodCarvingCamp.Data.Models;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 

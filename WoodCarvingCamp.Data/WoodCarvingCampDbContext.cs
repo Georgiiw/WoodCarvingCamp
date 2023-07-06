@@ -1,8 +1,8 @@
-﻿using HouseRentingSystem.Data.Models;
+﻿using WoodCarvingCamp.Data.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using WoodCarvingCamp.Data.Models;
+
 
 namespace WoodCarvingCamp.Data
 {

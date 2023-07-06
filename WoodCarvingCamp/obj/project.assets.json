@@ -803,6 +803,30 @@
         "runtime": {
           "bin/placeholder/WoodCarvingCamp.Data.Models.dll": {}
         }
+      },
+      "WoodCarvingCamp.Services.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "WoodCarvingCamp.Data": "1.0.0",
+          "WoodCarvingCamp.Web.ViewModels": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/WoodCarvingCamp.Services.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WoodCarvingCamp.Services.Data.dll": {}
+        }
+      },
+      "WoodCarvingCamp.Web.ViewModels/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/WoodCarvingCamp.Web.ViewModels.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WoodCarvingCamp.Web.ViewModels.dll": {}
+        }
       }
     }
   },
@@ -2307,6 +2331,16 @@
       "type": "project",
       "path": "../WoodCarvingCamp.Data.Models/WoodCarvingCamp.Data.Models.csproj",
       "msbuildProject": "../WoodCarvingCamp.Data.Models/WoodCarvingCamp.Data.Models.csproj"
+    },
+    "WoodCarvingCamp.Services.Data/1.0.0": {
+      "type": "project",
+      "path": "../WoodCarvingCamp.Services.Data/WoodCarvingCamp.Services.Data.csproj",
+      "msbuildProject": "../WoodCarvingCamp.Services.Data/WoodCarvingCamp.Services.Data.csproj"
+    },
+    "WoodCarvingCamp.Web.ViewModels/1.0.0": {
+      "type": "project",
+      "path": "../WoodCarvingCamp.Web.ViewModels/WoodCarvingCamp.Web.ViewModels.csproj",
+      "msbuildProject": "../WoodCarvingCamp.Web.ViewModels/WoodCarvingCamp.Web.ViewModels.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -2316,7 +2350,9 @@
       "Microsoft.AspNetCore.Identity.UI >= 6.0.5",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.5",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.5",
-      "WoodCarvingCamp.Data >= 1.0.0"
+      "WoodCarvingCamp.Data >= 1.0.0",
+      "WoodCarvingCamp.Services.Data >= 1.0.0",
+      "WoodCarvingCamp.Web.ViewModels >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -2353,6 +2389,12 @@
           "projectReferences": {
             "E:\\VS projects\\WoodCarvingCamp - CsharpWebCourse Project\\WoodCarvingCamp\\WoodCarvingCamp\\WoodCarvingCamp.Data\\WoodCarvingCamp.Data.csproj": {
               "projectPath": "E:\\VS projects\\WoodCarvingCamp - CsharpWebCourse Project\\WoodCarvingCamp\\WoodCarvingCamp\\WoodCarvingCamp.Data\\WoodCarvingCamp.Data.csproj"
+            },
+            "E:\\VS projects\\WoodCarvingCamp - CsharpWebCourse Project\\WoodCarvingCamp\\WoodCarvingCamp\\WoodCarvingCamp.Services.Data\\WoodCarvingCamp.Services.Data.csproj": {
+              "projectPath": "E:\\VS projects\\WoodCarvingCamp - CsharpWebCourse Project\\WoodCarvingCamp\\WoodCarvingCamp\\WoodCarvingCamp.Services.Data\\WoodCarvingCamp.Services.Data.csproj"
+            },
+            "E:\\VS projects\\WoodCarvingCamp - CsharpWebCourse Project\\WoodCarvingCamp\\WoodCarvingCamp\\WoodCarvingCamp.Web.ViewModels\\WoodCarvingCamp.Web.ViewModels.csproj": {
+              "projectPath": "E:\\VS projects\\WoodCarvingCamp - CsharpWebCourse Project\\WoodCarvingCamp\\WoodCarvingCamp\\WoodCarvingCamp.Web.ViewModels\\WoodCarvingCamp.Web.ViewModels.csproj"
             }
           }
         }

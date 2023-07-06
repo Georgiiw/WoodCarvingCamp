@@ -1,0 +1,24 @@
+﻿@model IEnumerable<CarvingCourseAllViewModel>
+
+@{
+	ViewBag.Title = "Carving courses";
+}
+<h2 class="text-center">@ViewBag.Title</h2>
+@if (Model.Any())
+{
+	<div class="row">
+		@foreach (var course in Model)
+		{
+			<div class="card" style="width: 18rem;">
+				<img src="@course.ImageUrl" class="card-img-top" alt="...">
+				<div class="card-body">
+					<h5 class="card-title">@course.Name</h5>
+					<p class="card-text">@course.Description</p>
+					<a href="#" class="btn btn-primary">Go somewhere</a>
+				</div>
+			</div>
+		}
+	</div>
+
+	
+}

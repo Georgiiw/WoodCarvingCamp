@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
-using WoodCarvingCamp.Models;
+using WoodCarvingCamp.Web.ViewModels;
 
 namespace WoodCarvingCamp.Controllers
 {

@@ -1,7 +1,9 @@
-using HouseRentingSystem.Data.Models;
+using WoodCarvingCamp.Data.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using WoodCarvingCamp.Data;
+using WoodCarvingCamp.Services.Data.Interfaces;
+using WoodCarvingCamp.Services.Data;
 
 namespace WoodCarvingCamp
 {
@@ -28,6 +30,7 @@ namespace WoodCarvingCamp
             });
 
             builder.Services.AddControllersWithViews();
+            builder.Services.AddScoped<ICarvingCourseService, CarvingCourseService>();
 
             WebApplication app = builder.Build();
 

@@ -1,8 +1,7 @@
-﻿namespace HouseRentingSystem.Data.Models
-{
-    using Microsoft.AspNetCore.Identity;
-    using WoodCarvingCamp.Data.Models;
+﻿using Microsoft.AspNetCore.Identity;
 
+namespace WoodCarvingCamp.Data.Models
+{
     /// <summary>
     /// This is custom user class that works with the default ASP.NET Core Identity.
     /// You can add additional info to the built-in users.
