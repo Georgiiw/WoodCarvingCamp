@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\WoodCarvingCamp.Data.Common\WoodCarvingCamp.Data.Common.csproj" />
+  </ItemGroup>
+
 </Project>

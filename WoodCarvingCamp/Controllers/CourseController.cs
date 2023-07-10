@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using WoodCarvingCamp.Services.Data.Interfaces;
 using WoodCarvingCamp.Web.ViewModels.CarvingCourse;
 
 namespace WoodCarvingCamp.Web.Controllers
 {
+    [Authorize]
     public class CourseController : Controller
     {
         private readonly ICarvingCourseService carvingCourseService;
@@ -12,7 +14,7 @@ namespace WoodCarvingCamp.Web.Controllers
         {
             this.carvingCourseService = carvingCourseService;
         }
-
+        [AllowAnonymous]
         public async Task<IActionResult> All()
         {
             if (!ModelState.IsValid)
@@ -24,6 +26,28 @@ namespace WoodCarvingCamp.Web.Controllers
 
             return View(allCourses);
 
+        }
+
+        [HttpGet]
+        public IActionResult Add()
+        {
+            CarvingCourseFormModel courseModel = new CarvingCourseFormModel();
+
+            return View(courseModel);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Add(CarvingCourseFormModel model)
+        {
+            model.AddedOn = DateTime.UtcNow;
+
+            if (!ModelState.IsValid)
+            {
+                return this.View(model);
+            }
+            await this.carvingCourseService.AddCourseAsync(model);
+
+            return this.RedirectToAction("All", "Course");
         }
     }
 }

@@ -1,0 +1,31 @@
+﻿@model CarvingCourseFormModel
+
+@{
+    ViewBag.Title = "Add Course";
+}
+
+<h2 class="text-center">@ViewBag.Title</h2>
+
+<div class="row">
+	<form asp-action="Add" method="post">
+		<div class="mb-3">
+			<label asp-for="Name" class="form-label">Course name</label>
+			<input asp-for="Name" class="form-control" aria-required="true">
+		</div>
+		<div class="mb-3">
+			<label asp-for="ImageUrl" class="form-label">Image link</label>
+			<input asp-for="ImageUrl" class="form-control" aria-required="true">
+		</div>
+		<div class="mb-3">
+			<label asp-for="Description" class="form-label">Course Description</label>
+			<textarea asp-for="Description" class="form-control" rows="3" aria-required="true"></textarea>
+		</div>
+		<div class="mb-3 form-check">
+			<label asp-for="IsPaid" class="form-check-label">Is the course paid?</label>
+			<input asp-for="IsPaid" type="checkbox" class="form-check-input">
+			
+		</div>
+
+		<button type="submit" class="btn btn-primary" value="Add">Add Course</button>
+	</form>
+</div>

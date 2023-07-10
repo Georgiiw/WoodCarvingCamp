@@ -821,6 +821,9 @@
       "WoodCarvingCamp.Web.ViewModels/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "WoodCarvingCamp.Data.Common": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/WoodCarvingCamp.Web.ViewModels.dll": {}
         },
