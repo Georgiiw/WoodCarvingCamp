@@ -4,9 +4,13 @@
 	ViewBag.Title = "Carving courses";
 }
 <h2 class="text-center">@ViewBag.Title</h2>
+<div>
+	<a href="/course/add" class="btn btn-primary">Add Course</a>
+</div>
 @if (Model.Any())
 {
 	<div class="row">
+
 		@foreach (var course in Model)
 		{
 			<div class="card" style="width: 18rem;">
@@ -18,7 +22,9 @@
 				</div>
 			</div>
 		}
+
+
 	</div>
 
-	
+
 }
