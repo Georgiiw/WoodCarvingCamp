@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "3hMgk9IfaiZeYg/WLJMM1fw+y0F53IJq5QxEBE8/4bU=",
+  "Hash": "ENg34fbnLNeOYTeD44a3O6mYhF1b3GccR3qkJAfQIA8=",
   "Source": "WoodCarvingCamp.Web",
   "BasePath": "_content/WoodCarvingCamp.Web",
   "Mode": "Default",
@@ -1103,6 +1103,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "E:\\VS projects\\WoodCarvingCamp - CsharpWebCourse Project\\WoodCarvingCamp\\WoodCarvingCamp\\WoodCarvingCamp\\wwwroot\\images\\149797.jpg",
+      "SourceId": "WoodCarvingCamp.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\VS projects\\WoodCarvingCamp - CsharpWebCourse Project\\WoodCarvingCamp\\WoodCarvingCamp\\WoodCarvingCamp\\wwwroot\\",
+      "BasePath": "_content/WoodCarvingCamp.Web",
+      "RelativePath": "images/149797.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\149797.jpg"
     },
     {
       "Identity": "E:\\VS projects\\WoodCarvingCamp - CsharpWebCourse Project\\WoodCarvingCamp\\WoodCarvingCamp\\WoodCarvingCamp\\wwwroot\\js\\site.js",
