@@ -7,7 +7,7 @@
 <h2 class="text-center">@ViewBag.Title</h2>
 <div>
 	<div class="row">			
-		<a href="/course/add" class="btn btn-primary" >Add Course</a>		
+		<a asp-controller="Course" asp-action="Add" class="btn btn-primary">Add Course</a>		
 	</div>
 </div>
 @if (Model.Any())
@@ -22,6 +22,7 @@
 					<h5 class="card-title">@course.Name</h5>
 					<p class="card-text">@course.Description</p>
 					<a href="#" class="btn btn-primary">Details</a>
+					<a asp-controller="Course" asp-action="Edit" asp-route-id="@course.Id" class="btn btn-warning">Edit</a>
 				</div>
 			</div>
 		}

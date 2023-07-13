@@ -47,6 +47,38 @@ namespace WoodCarvingCamp.Services.Data
                 }).ToListAsync();
 
             return allCourses;
-        }     
+        }
+
+        public async Task EditByIdAsync(string id, CarvingCourseFormModel editedCourseModel)
+        {
+            CarvingCourse courseToEdit = await this.dbContext
+                .CarvingCourses
+                .FirstAsync(c => c.Id.ToString() == id);
+
+            courseToEdit.Name = editedCourseModel.Name;
+            courseToEdit.Description = editedCourseModel.Description;
+            courseToEdit.ImageUrl = editedCourseModel.ImageUrl;
+            courseToEdit.IsPaid = editedCourseModel.IsPaid;
+            courseToEdit.Price = editedCourseModel.Price;
+
+            await this.dbContext.SaveChangesAsync();
+
+        }
+
+        public async Task<CarvingCourseFormModel> GetForEditByIdAsync(string id)
+        {
+            CarvingCourse carvingCourse = await this.dbContext
+                .CarvingCourses
+                .FirstAsync(c => c.Id.ToString() == id);
+
+            return new CarvingCourseFormModel()
+            {
+                Name = carvingCourse.Name,
+                Description = carvingCourse.Description,
+                ImageUrl = carvingCourse.ImageUrl,
+                IsPaid = carvingCourse.IsPaid,
+                Price = carvingCourse.Price
+            };
+        }
     }
 }

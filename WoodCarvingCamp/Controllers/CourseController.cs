@@ -31,9 +31,16 @@ namespace WoodCarvingCamp.Web.Controllers
         [HttpGet]
         public IActionResult Add()
         {
-            CarvingCourseFormModel courseModel = new CarvingCourseFormModel();
+            try
+            {
+                CarvingCourseFormModel courseModel = new CarvingCourseFormModel();
 
-            return View(courseModel);
+                return View(courseModel);
+            }
+            catch (Exception)
+            {
+                return this.RedirectToAction("All", "Course");
+            }
         }
 
         [HttpPost]
@@ -45,9 +52,59 @@ namespace WoodCarvingCamp.Web.Controllers
             {
                 return this.View(model);
             }
-            await this.carvingCourseService.AddCourseAsync(model);
+
+            try
+            {
+                await this.carvingCourseService.AddCourseAsync(model);
+            }
+            catch (Exception)
+            {
+                ModelState.AddModelError(string.Empty, "An error occurred.");
+            }
+            
 
             return this.RedirectToAction("All", "Course");
         }
+        [HttpGet]
+        public async Task<IActionResult> Edit(string id)
+        {
+            try
+            {
+                CarvingCourseFormModel courseModel =
+                    await this.carvingCourseService.GetForEditByIdAsync(id);
+
+                return View(courseModel);
+
+            }
+            catch (Exception)
+            {
+
+                return this.RedirectToAction("All", "Course");
+            }
+        }
+        [HttpPost]
+
+        public async Task<IActionResult> Edit(CarvingCourseFormModel courseModel, string id)
+        {
+            if (!ModelState.IsValid)
+            {
+                return this.View(courseModel);
+            }
+
+            try
+            {
+                await this.carvingCourseService.EditByIdAsync(id, courseModel);
+            }
+            catch (Exception)
+            {
+                ModelState.AddModelError(string.Empty, "An error occurred.");
+
+                return View(courseModel);
+            }
+
+            return RedirectToAction("All", "Course");
+        }
+
+
     }
 }

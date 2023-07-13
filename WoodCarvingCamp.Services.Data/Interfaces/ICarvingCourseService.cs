@@ -6,5 +6,7 @@ namespace WoodCarvingCamp.Services.Data.Interfaces
     {
         Task<IEnumerable<CarvingCourseAllViewModel>> AllCoursesAsync();
         Task AddCourseAsync(CarvingCourseFormModel model);
+        Task<CarvingCourseFormModel> GetForEditByIdAsync(string id);
+        Task EditByIdAsync(string id, CarvingCourseFormModel courseModel);
     }
 }

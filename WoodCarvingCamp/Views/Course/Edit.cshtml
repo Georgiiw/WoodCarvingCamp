@@ -1,0 +1,53 @@
+﻿@model CarvingCourseFormModel
+
+@{
+    ViewBag.Title = "Edit Course";
+}
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+<h2 class="text-center">@ViewBag.Title</h2>
+
+<div class="row">
+	<form asp-action="Edit" method="post">
+		<div class="mb-3">
+			<label asp-for="Name" class="form-label">Course name</label>
+			<input asp-for="Name" class="form-control" aria-required="true">
+			<span asp-validation-for="Name" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="ImageUrl" class="form-label">Image link</label>
+			<input asp-for="ImageUrl" class="form-control" aria-required="true">
+			<span asp-validation-for="ImageUrl" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="Description" class="form-label">Course Description</label>
+			<textarea asp-for="Description" class="form-control" rows="3" aria-required="true"></textarea>
+			<span asp-validation-for="Description" class="text-danger"></span>
+		</div>
+		<div class="mb-3 form-check">
+			<label asp-for="IsPaid" class="form-check-label">Paid</label>
+			<input asp-for="IsPaid" type="checkbox" class="form-check-input" id="checkId" onclick="showPrice()">			
+		</div>
+		<div class="mb-3" id="priceId" style="display:none">
+			<label asp-for="Price" class="form-label">Price</label>
+			<input asp-for="Price" class="form-control">			
+		</div>
+
+		<button type="submit" class="btn btn-primary" value="Edit">Edit</button>
+
+	</form>
+</div>
+
+<script>
+	function showPrice() {
+  var checkBox = document.getElementById("checkId"); 
+  var price = document.getElementById("priceId");
+  if (checkBox.checked == true){
+    price.style.display = "block";
+  } else {
+    price.style.display = "none";
+  }
+}
+</script>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
