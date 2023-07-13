@@ -6,8 +6,8 @@
 <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 <h2 class="text-center">@ViewBag.Title</h2>
 <div>
-	<div class="row">			
-		<a asp-controller="Course" asp-action="Add" class="btn btn-primary">Add Course</a>		
+	<div class="row">
+		<a asp-controller="Course" asp-action="Add" class="btn btn-primary">Add Course</a>
 	</div>
 </div>
 @if (Model.Any())
@@ -20,15 +20,29 @@
 				<img src="@course.ImageUrl" class="card-img-top">
 				<div class="card-body">
 					<h5 class="card-title">@course.Name</h5>
-					<p class="card-text">@course.Description</p>
-					<a href="#" class="btn btn-primary">Details</a>
-					<a asp-controller="Course" asp-action="Edit" asp-route-id="@course.Id" class="btn btn-warning">Edit</a>
+					<p class="card-text">@course.Description</p>					
+					<a asp-controller="Course" asp-action="Edit" asp-route-id="@course.Id" class="btn btn-warning">Edit</a>		
+					<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#deleteModal-@course.Id">
+						Delete
+					</button>
+					<!-- Modal -->
+					<div class="modal fade" id="deleteModal-@course.Id" tabindex="1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h1 class="modal-title fs-5" id="exampleModalLabel">Are you sure you want to delete @course.Name</h1>
+									<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+								</div>								
+								<div class="modal-footer">
+									<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+									<a asp-controller="Course" asp-action="Delete" asp-route-id="@course.Id"
+										class="btn btn-danger">Delete</a>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		}
-
-
 	</div>
-
-
 }

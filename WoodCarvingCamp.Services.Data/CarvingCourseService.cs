@@ -26,6 +26,10 @@ namespace WoodCarvingCamp.Services.Data
                 Price = model.Price,
                 AddedOn = model.AddedOn
             };
+            if (!newCourse.IsPaid)
+            {
+                newCourse.Price = null;
+            }
             await this.dbContext.AddAsync(newCourse);
             await this.dbContext.SaveChangesAsync();
         
@@ -49,6 +53,16 @@ namespace WoodCarvingCamp.Services.Data
             return allCourses;
         }
 
+        public async Task DeleteCourse(string id)
+        {
+            CarvingCourse courseToDelete = await this.dbContext
+                .CarvingCourses
+                .FirstAsync(c => c.Id.ToString() == id);
+
+            this.dbContext.Remove(courseToDelete);
+            await this.dbContext.SaveChangesAsync();
+        }
+
         public async Task EditByIdAsync(string id, CarvingCourseFormModel editedCourseModel)
         {
             CarvingCourse courseToEdit = await this.dbContext
@@ -60,6 +74,11 @@ namespace WoodCarvingCamp.Services.Data
             courseToEdit.ImageUrl = editedCourseModel.ImageUrl;
             courseToEdit.IsPaid = editedCourseModel.IsPaid;
             courseToEdit.Price = editedCourseModel.Price;
+
+            if (!courseToEdit.IsPaid)
+            {
+                courseToEdit.Price = null;
+            }
 
             await this.dbContext.SaveChangesAsync();
 

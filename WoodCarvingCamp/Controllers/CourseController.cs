@@ -55,6 +55,7 @@ namespace WoodCarvingCamp.Web.Controllers
 
             try
             {
+               
                 await this.carvingCourseService.AddCourseAsync(model);
             }
             catch (Exception)
@@ -104,7 +105,19 @@ namespace WoodCarvingCamp.Web.Controllers
 
             return RedirectToAction("All", "Course");
         }
+        public async Task<IActionResult> Delete(string id)
+        {
+            try
+            {
+                await this.carvingCourseService.DeleteCourse(id);
+            }
+            catch (Exception)
+            {
 
+                throw;
+            }
+            return RedirectToAction("All", "Course");
+        }
 
     }
 }

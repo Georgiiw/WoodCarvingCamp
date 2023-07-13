@@ -8,5 +8,6 @@ namespace WoodCarvingCamp.Services.Data.Interfaces
         Task AddCourseAsync(CarvingCourseFormModel model);
         Task<CarvingCourseFormModel> GetForEditByIdAsync(string id);
         Task EditByIdAsync(string id, CarvingCourseFormModel courseModel);
+        Task DeleteCourse(string id);
     }
 }
