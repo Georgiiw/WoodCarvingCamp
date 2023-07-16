@@ -24,7 +24,7 @@ body {
     width: 100%;
     display: flex;
     flex-direction: column;
-    background-image: url('../images/149797.jpg');
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url('../images/149797.jpg');
     background-size: cover;
 }
 

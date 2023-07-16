@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\WoodCarvingCamp.Data.Common\WoodCarvingCamp.Data.Common.csproj" />
+    <ProjectReference Include="..\WoodCarvingCamp.Data.Models\WoodCarvingCamp.Data.Models.csproj" />
   </ItemGroup>
 
 </Project>

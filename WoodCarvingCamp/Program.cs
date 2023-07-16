@@ -31,6 +31,7 @@ namespace WoodCarvingCamp
 
             builder.Services.AddControllersWithViews();
             builder.Services.AddScoped<ICarvingCourseService, CarvingCourseService>();
+            builder.Services.AddScoped<IShopService, ShopService>();
 
             WebApplication app = builder.Build();
 
