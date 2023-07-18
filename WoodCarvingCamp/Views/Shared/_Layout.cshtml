@@ -10,41 +10,43 @@
 </head>
 <body>
 	<header>
-		 <nav class="navbar navbar-expand-lg bg-light">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">WoodCarvingCamp</a>              
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">                        
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Course" asp-action="All">Courses</a>
-                        </li>
-                    </ul>
-                    <partial name="_LoginPartial" />
-                </div>
-            </div>
-        </nav>
-
+		<div class="container-fluid">
+			<div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+				<ul class="navbar-nav flex-grow-1">
+					<li class="nav-item">
+						<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="navbar-brand " asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+					</li>
+					<li class="nav-item">
+						<a class="navbar-brand " asp-area="" asp-controller="Course" asp-action="All">Courses</a>
+					</li>
+					<li class="nav-item">
+						<a class="navbar-brand " asp-area="" asp-controller="Shop" asp-action="All">Shop</a>
+					</li>
+				</ul>
+				<partial name="_LoginPartial" />
+			</div>
+		</div>
 	</header>
 	<div class="container">
 		<main role="main" class="pb-3">
 			@RenderBody()
-			
+
 		</main>
 	</div>
-	
-    <footer class="border-top footer text-muted">	
-		 <div class="container">
-           <p>&copy; 2023 - WoodCarvingCamp</p> 
-           <p>
-			    <a href="https://www.flaticon.com/free-icons/wood" title="wood icons">Wood icons created by Freepik - Flaticon</a>
-		   </p>           
-        </div>
+
+	<footer class="border-top footer text-muted">
+		<div class="container">
+			<p>&copy; 2023 - WoodCarvingCamp</p>
+			<p>
+				<a href="https://www.flaticon.com/free-icons/wood" title="wood icons">Wood icons created by Freepik - Flaticon</a>
+			</p>
+		</div>
 	</footer>
-	
-	
+
+
 	<script src="~/lib/jquery/dist/jquery.min.js"></script>
 	<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 	<script src="~/js/site.js" asp-append-version="true"></script>

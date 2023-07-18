@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 <h2 class="text-center">@ViewBag.Title</h2>
 <div>
-	<div class="row">
+	<div class="d-grid gap-2 col-6 mx-auto">
 		<a asp-controller="Course" asp-action="Add" class="btn btn-primary">Add Course</a>
 	</div>
 </div>
@@ -16,7 +16,7 @@
 
 		@foreach (var course in Model)
 		{
-			<div class="card" style="width: 18rem;">
+			<div class="card" style="width: 22rem;">
 				<img src="@course.ImageUrl" class="card-img-top">
 				<div class="card-body">
 					<h5 class="card-title">@course.Name</h5>
