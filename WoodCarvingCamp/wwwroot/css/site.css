@@ -44,17 +44,25 @@ footer {
 }
 /*---Index View---*/
 .content{
-    width: 100%;
-    position: center;
-    top: 50%;   
-    text-align: center;
+    margin-top: 18%;
+    font-size: 18px;
     color: #ffffff;
 }
 
 .content h1{
+    font-weight: 500;
     font-size: 70px;
-    margin-top: 80px;
+    max-width: 550px;
+    line-height: 90px;
+    margin-top: 10px;
+    margin-bottom: 30px;
 }
+
+.content p{
+     max-width: 550px;
+     
+}
+
 
 
 /*---Add Course View---*/
@@ -99,20 +107,22 @@ footer {
 /*---Navbar---*/
 .navbar-collapse {
     width: 100%;
-    
-    overflow: hidden;
+    overflow: hidden;     
 }
 .nav-item {
     padding-left: 20px;
+    display: inline-block;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
-.navbar-nav{
-    display: inline-block;   
+.navbar-nav {
+    display: inline-block;
+    text-align: center;
 }
 .nav-item a {
-     padding: 14px 16px;
-     float: left;
-     text-decoration: none;
-     color: #fff;
+    padding: 14px 16px;    
+    text-decoration: none;
+    color: #fff;    
 }
 .nav-item a:hover {
       background-color:#fff;
