@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "PR+28GXmX90CHqZq5uLufvFsz4qg/BtW+97b7YftKD8=",
+  "Hash": "WREN+tv02O+k+i0v7IVtHeQYe42XFVxuO7dyO3pFhYA=",
   "Source": "WoodCarvingCamp.Web",
   "BasePath": "_content/WoodCarvingCamp.Web",
   "Mode": "Default",
@@ -1137,6 +1137,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\navbar-icon.png"
+    },
+    {
+      "Identity": "E:\\VS projects\\WoodCarvingCamp - CsharpWebCourse Project\\WoodCarvingCamp\\WoodCarvingCamp\\WoodCarvingCamp\\wwwroot\\js\\jquery-override.js",
+      "SourceId": "WoodCarvingCamp.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\VS projects\\WoodCarvingCamp - CsharpWebCourse Project\\WoodCarvingCamp\\WoodCarvingCamp\\WoodCarvingCamp\\wwwroot\\",
+      "BasePath": "_content/WoodCarvingCamp.Web",
+      "RelativePath": "js/jquery-override.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\jquery-override.js"
     },
     {
       "Identity": "E:\\VS projects\\WoodCarvingCamp - CsharpWebCourse Project\\WoodCarvingCamp\\WoodCarvingCamp\\WoodCarvingCamp\\wwwroot\\js\\site.js",

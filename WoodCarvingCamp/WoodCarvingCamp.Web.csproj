@@ -18,6 +18,7 @@
   <ItemGroup>
     <ProjectReference Include="..\WoodCarvingCamp.Data\WoodCarvingCamp.Data.csproj" />
     <ProjectReference Include="..\WoodCarvingCamp.Services.Data\WoodCarvingCamp.Services.Data.csproj" />
+    <ProjectReference Include="..\WoodCarvingCamp.Web.Infrastructure\WoodCarvingCamp.Web.Infrastructure.csproj" />
     <ProjectReference Include="..\WoodCarvingCamp.Web.ViewModels\WoodCarvingCamp.Web.ViewModels.csproj" />
   </ItemGroup>
 

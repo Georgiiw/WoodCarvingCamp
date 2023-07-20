@@ -4,6 +4,8 @@ using Microsoft.EntityFrameworkCore;
 using WoodCarvingCamp.Data;
 using WoodCarvingCamp.Services.Data.Interfaces;
 using WoodCarvingCamp.Services.Data;
+using Microsoft.AspNetCore.Mvc;
+using WoodCarvingCamp.Web.Infrastructure.ModelBinders;
 
 namespace WoodCarvingCamp
 {
@@ -29,9 +31,16 @@ namespace WoodCarvingCamp
                 options.Password.RequireNonAlphanumeric = false;
             });
 
-            builder.Services.AddControllersWithViews();
             builder.Services.AddScoped<ICarvingCourseService, CarvingCourseService>();
             builder.Services.AddScoped<IShopService, ShopService>();
+
+            builder.Services
+                .AddControllersWithViews()
+                .AddMvcOptions(options =>
+                {
+                    options.ModelBinderProviders.Insert(0, new DecimalModelBinderProvider());
+                    options.Filters.Add<AutoValidateAntiforgeryTokenAttribute>();
+                });
 
             WebApplication app = builder.Build();
 
