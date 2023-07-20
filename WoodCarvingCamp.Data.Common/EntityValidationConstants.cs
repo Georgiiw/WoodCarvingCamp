@@ -37,5 +37,10 @@
             public const int DescriptionMaxLength = 500;
             public const int ImageUrlMaxLength = 2048;
         }
+        public static class CategoryValidations
+        {
+            public const int NameMinLength = 2;
+            public const int NameMaxLength = 30;
+        }
     }
 }

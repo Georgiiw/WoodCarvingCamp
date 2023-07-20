@@ -37,7 +37,10 @@ namespace WoodCarvingCamp.Data.Models
         public int DiscountId { get; set; }
 
         public Discount? Discount { get; set; }
-        
-        
+
+        [ForeignKey(nameof(Category))]
+        public int CategoryId { get; set; }
+        public virtual Category Category { get; set; } = null!;
+
     }
 }
