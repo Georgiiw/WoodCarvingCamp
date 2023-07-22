@@ -16,11 +16,11 @@
 
 		@foreach (var course in Model)
 		{
-			<div class="card" style="width: 22rem;">
+			<div class="card" style="width: 25rem;">
+					<h5 class="card-title">@course.Name</h5>					
 				<img src="@course.ImageUrl" class="card-img-top">
 				<div class="card-body">
-					<h5 class="card-title">@course.Name</h5>					
-					<button class="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample-@course.Id" aria-expanded="false" aria-controls="collapseExample">
+					<button  type="button" class="addbtn" data-bs-toggle="collapse" data-bs-target="#collapseExample-@course.Id" aria-expanded="false" aria-controls="collapseExample">
 						Details
 					</button>										
 					<a asp-controller="Course" asp-action="Edit" asp-route-id="@course.Id" class="btn btn-warning">Edit</a>
