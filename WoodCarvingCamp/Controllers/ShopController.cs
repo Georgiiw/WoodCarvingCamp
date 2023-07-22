@@ -26,5 +26,38 @@ namespace WoodCarvingCamp.Web.Controllers
 
             return View(allProducts);
         }
+        [HttpGet]
+        public async Task<IActionResult> Add()
+        {
+            try
+            {
+                ProductFormModel productModel = await this.shopService.GetAddProductAsync();              
+
+                return View(productModel);
+            }
+            catch (Exception)
+            {
+                return this.RedirectToAction("All", "Shop");
+            }
+        }
+        [HttpPost]
+        public async Task<IActionResult> Add(ProductFormModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return this.View(model);
+            }
+            try
+            {
+
+                await this.shopService.AddProductAsync(model);
+            }
+            catch (Exception)
+            {
+                ModelState.AddModelError(string.Empty, "An error occurred.");
+            }
+
+            return this.RedirectToAction("All", "Shop");
+        }
     }
 }

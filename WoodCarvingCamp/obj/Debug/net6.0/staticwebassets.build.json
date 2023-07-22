@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "WREN+tv02O+k+i0v7IVtHeQYe42XFVxuO7dyO3pFhYA=",
+  "Hash": "ay6HUTFCjzZCao4FnPYAR+QJgzp88d9VV1qV+fk1yXs=",
   "Source": "WoodCarvingCamp.Web",
   "BasePath": "_content/WoodCarvingCamp.Web",
   "Mode": "Default",
@@ -1120,6 +1120,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\149797.jpg"
+    },
+    {
+      "Identity": "E:\\VS projects\\WoodCarvingCamp - CsharpWebCourse Project\\WoodCarvingCamp\\WoodCarvingCamp\\WoodCarvingCamp\\wwwroot\\images\\holzfigur-g28d9eeb54_1920.jpg",
+      "SourceId": "WoodCarvingCamp.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\VS projects\\WoodCarvingCamp - CsharpWebCourse Project\\WoodCarvingCamp\\WoodCarvingCamp\\WoodCarvingCamp\\wwwroot\\",
+      "BasePath": "_content/WoodCarvingCamp.Web",
+      "RelativePath": "images/holzfigur-g28d9eeb54_1920.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\holzfigur-g28d9eeb54_1920.jpg"
     },
     {
       "Identity": "E:\\VS projects\\WoodCarvingCamp - CsharpWebCourse Project\\WoodCarvingCamp\\WoodCarvingCamp\\WoodCarvingCamp\\wwwroot\\images\\navbar-icon.png",

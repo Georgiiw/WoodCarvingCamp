@@ -31,12 +31,7 @@ namespace WoodCarvingCamp.Data.Models
         public DateTime CreatedOn { get; set; }
 
         [Required]
-        public DateTime UpdatedOn { get; set; }
-
-        [ForeignKey(nameof(Discount))]
-        public int DiscountId { get; set; }
-
-        public Discount? Discount { get; set; }
+        public DateTime UpdatedOn { get; set; }        
 
         [ForeignKey(nameof(Category))]
         public int CategoryId { get; set; }
