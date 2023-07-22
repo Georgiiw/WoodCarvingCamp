@@ -19,9 +19,11 @@
 			<div class="card" style="width: 22rem;">
 				<img src="@course.ImageUrl" class="card-img-top">
 				<div class="card-body">
-					<h5 class="card-title">@course.Name</h5>
-					<p class="card-text">@course.Description</p>					
-					<a asp-controller="Course" asp-action="Edit" asp-route-id="@course.Id" class="btn btn-warning">Edit</a>		
+					<h5 class="card-title">@course.Name</h5>					
+					<button class="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample-@course.Id" aria-expanded="false" aria-controls="collapseExample">
+						Details
+					</button>										
+					<a asp-controller="Course" asp-action="Edit" asp-route-id="@course.Id" class="btn btn-warning">Edit</a>
 					<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#deleteModal-@course.Id">
 						Delete
 					</button>
@@ -32,13 +34,33 @@
 								<div class="modal-header">
 									<h1 class="modal-title fs-5" id="exampleModalLabel">Are you sure you want to delete @course.Name</h1>
 									<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-								</div>								
+								</div>
 								<div class="modal-footer">
 									<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 									<a asp-controller="Course" asp-action="Delete" asp-route-id="@course.Id"
-										class="btn btn-danger">Delete</a>
+							   class="btn btn-danger">Delete</a>
 								</div>
 							</div>
+						</div>
+					</div>
+					<!-- Modal -->	
+					<div class="collapse" id="collapseExample-@course.Id">
+						<div>
+							<ul>
+								<li>
+									@course.Description
+								</li>
+							</ul>							
+							<br>
+							@if (@course.Price == null)
+							{
+								<p>Price: <strong>Free!</strong></p>
+							}
+							else
+							{
+								<p>Price: <strong>$@course.Price</strong></p>								
+								<button type="button" class="btn btn-success">Purchase</button>
+							}
 						</div>
 					</div>
 				</div>
