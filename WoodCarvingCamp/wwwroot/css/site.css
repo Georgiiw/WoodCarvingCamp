@@ -27,7 +27,7 @@ body {
     position: relative;
 }
     body::before {
-        background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url('../images/149797.jpg');
+        background-image: linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)), url('../images/holzfigur-g28d9eeb54_1920.jpg');
         background-size: cover;
         content: ' ';
         height: 100%;
