@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
-
+using System.ComponentModel.DataAnnotations;
+using static WoodCarvingCamp.Data.Common.EntityValidationConstants.UserValidations;
 namespace WoodCarvingCamp.Data.Models
 {
     /// <summary>
@@ -14,6 +15,12 @@ namespace WoodCarvingCamp.Data.Models
             this.CarvingCourses = new HashSet<CarvingCourse>();
         }
 
+        [Required]
+        [StringLength(FirstNameMaxLength)]
+        public string FirstName { get; set; } = null!;
+        [Required]
+        [StringLength(LastNameMaxLength)]
+        public string LastName { get; set; } = null!;
         public virtual ICollection<CarvingCourse> CarvingCourses { get; set; }
 
     }
