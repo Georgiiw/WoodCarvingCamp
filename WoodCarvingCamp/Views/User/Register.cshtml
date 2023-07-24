@@ -3,12 +3,11 @@
     ViewData["Title"] = "Register";
 }
 
-<h1 class="text-center">@ViewData["Title"]</h1>
+<h2 id="registerTitle">Create a new account.</h2>
 
 <div class="row">
-    <div class="col-md-4">
-        <form id="registerForm" method="post">
-            <h2>Create a new account.</h2>
+    <div class="col" id="registerId">
+        <form id="registerForm" method="post">           
             <hr />
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-floating">

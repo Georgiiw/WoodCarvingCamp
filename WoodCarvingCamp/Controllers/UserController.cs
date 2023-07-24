@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 
 using WoodCarvingCamp.Data.Models;
+using WoodCarvingCamp.Web.ViewModels.User;
 
 namespace WoodCarvingCamp.Web.Controllers
 {
@@ -20,6 +21,39 @@ namespace WoodCarvingCamp.Web.Controllers
         public IActionResult Register()
         {
             return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Register(RegisterFormModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return this.View(model);
+            }
+            ApplicationUser user = new ApplicationUser
+            {
+                FirstName = model.FirstName,
+                LastName = model.LastName,             
+
+            };          
+
+            await this.userManager.SetEmailAsync(user, model.Email);
+            await this.userManager.SetUserNameAsync(user, model.Email);
+
+            IdentityResult result = await this.userManager.CreateAsync(user, model.Password);
+
+            if (!result.Succeeded)
+            {
+                foreach (IdentityError error in result.Errors)
+                {
+                    ModelState.AddModelError(String.Empty, error.Description);
+                }
+                return View(model);
+            }
+
+            await this.signInManager.SignInAsync(user, false);
+
+            return RedirectToAction("Index", "Home");
         }
     }
 }

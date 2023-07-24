@@ -38,7 +38,6 @@ body {
         will-change: transform;
         z-index: -1;
     }
-
 footer {
     margin-top: auto;
 }
@@ -48,7 +47,6 @@ footer {
     font-size: 18px;
     color: #ffffff;
 }
-
 .content h1{
     font-weight: 500;
     font-size: 70px;
@@ -57,42 +55,33 @@ footer {
     margin-top: 10px;
     margin-bottom: 30px;
 }
-
 .content p{
      max-width: 550px;
      
 }
-
-
-
 /*---Add Course View---*/
 .form-label {
     color: #ffffff;
     font-size: 20px;
 }
-
 .form-check-label {
     color: #ffffff;
     font-size: 20px;
 }
-
 .form-check-input {
     color: #ffffff;
     font-size: 20px;
 }
-
 .text-center {
     font-size: 50px;
     margin-top: 20px;
     color: #ffffff;
 }
-
 .text-danger {
     font-size: 20px;
     background-color: aliceblue;
     
 }
-
 .d-grid {
     padding: 10px;
 }
@@ -143,4 +132,17 @@ footer {
     text-align: center;
     margin: 15px 15px 15px 15px;
     font-size: larger;
+}
+/*---Register---*/
+#registerForm {
+    display: grid;
+    row-gap: 5px;
+    font-size: 100%;
+    width: 50%;   
+    margin: auto 
+}
+#registerTitle {
+    text-align: center;    
+    margin: 20px;
+    color: #ffffff;
 }
