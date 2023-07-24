@@ -34,6 +34,11 @@ namespace WoodCarvingCamp
             builder.Services.AddScoped<ICarvingCourseService, CarvingCourseService>();
             builder.Services.AddScoped<IShopService, ShopService>();
 
+            builder.Services.ConfigureApplicationCookie(cfg =>
+            {
+                cfg.LoginPath = "/User/Login";
+            });
+
             builder.Services
                 .AddControllersWithViews()
                 .AddMvcOptions(options =>

@@ -146,3 +146,16 @@ footer {
     margin: 20px;
     color: #ffffff;
 }
+/*---Login---*/
+#loginForm {
+    display: grid;
+    row-gap: 5px;
+    font-size: 100%;
+    width: 40%;   
+    margin: auto 
+}
+#loginTitle {
+    text-align: center;    
+    margin: 20px;
+    color: #ffffff;
+}
