@@ -93,6 +93,22 @@ footer {
     padding: 5px 5px 5px 5px;
     margin-bottom: 1rem;
 }
+.addbtn{
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;    
+    border: 2px solid #05d5c2;
+    background: transparent;
+    color: black;
+    cursor: pointer;
+}
+.card-title{
+    text-align: center;
+    margin: 15px 15px 15px 15px;
+    font-size: larger;
+}
 /*---Navbar---*/
 .navbar-collapse {
     width: 100%;
@@ -117,22 +133,6 @@ footer {
       background-color:#fff;
       color: black;
 }
-.addbtn{
-    width: 200px;
-    padding: 15px 0;
-    text-align: center;
-    margin: 20px 10px;
-    border-radius: 25px;    
-    border: 2px solid #05d5c2;
-    background: transparent;
-    color: black;
-    cursor: pointer;
-}
-.card-title{
-    text-align: center;
-    margin: 15px 15px 15px 15px;
-    font-size: larger;
-}
 /*---Register---*/
 #registerForm {
     display: grid;
@@ -151,11 +151,45 @@ footer {
     display: grid;
     row-gap: 5px;
     font-size: 100%;
-    width: 40%;   
-    margin: auto 
+    text-align: center;
+    margin: auto;
 }
 #loginTitle {
-    text-align: center;    
+    text-align: center;
     margin: 20px;
     color: #ffffff;
 }
+#cardId {
+    width: 500px;
+    height: 500px;
+    box-shadow: 0 0 40px 20px rgba(0,0,0,0.26);
+    background: transparent;
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    margin-top: 100px;
+}
+#cardId .input {
+    width: 350px;
+    background: transparent;
+    border: 1px solid #fff;
+    margin-top: 20px;
+    height: 50px;
+    border-radius: 20px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    outline: none;   
+    text-align: center;
+    color: #fff;
+}
+#login-submit{
+    width: 73%;
+    height: 50px;
+    border-radius: 20px;
+    margin: 20px;
+    font-weight: 600;
+}
+#checkBox{
+    font-size: 20px;
+    margin-right: 190px;
+}
+

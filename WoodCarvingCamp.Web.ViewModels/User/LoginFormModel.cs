@@ -15,6 +15,8 @@ namespace WoodCarvingCamp.Web.ViewModels.User
         [Required]
         [DataType(DataType.Password)]
         public string Password { get; set; } = null!;
+        [Display(Name = "Remember me?")]
+        public bool RememberMe { get; set; }
         public string? ReturnUrl { get; set; }
     }
 }

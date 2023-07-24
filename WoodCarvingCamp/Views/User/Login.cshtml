@@ -1,30 +1,38 @@
 ﻿@model LoginFormModel
 
 @{
-    ViewData["Title"] = "Log in";
+    ViewData["Title"] = "Login";
 }
 
-<h2 id="loginTitle">@ViewData["Title"]</h2>
-<div class="row">
-    <div class="col">
-        <section>
-            <form id="loginForm" method="post">               
-                <hr />
+<div class="container">
+    <div class="card" id="cardId">
+        <section>           
+            <form id="loginForm" method="post">                              
+                 <h2 id="loginTitle">@ViewData["Title"]</h2>
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <div class="form-floating">
-                    <input asp-for="Email" class="form-control" autocomplete="username" aria-required="true" />
-                    <label asp-for="Email">Email</label>
+                <div class="form-floating">                   
+                    <input asp-for="Email" class="input" placeholder="Email" autocomplete="username" aria-required="true" />
+                    @*<label asp-for="Email">Email</label>*@
+                    <br />
                     <span asp-validation-for="Email" class="text-danger"></span>
                 </div>
                 <div class="form-floating">
-                    <input asp-for="Password" class="form-control" autocomplete="current-password" aria-required="true" />
-                    <label asp-for="Password">Password</label>
+                    <input asp-for="Password" class="input" placeholder="Password" autocomplete="current-password" aria-required="true" />
+                    @*<label asp-for="Password">Password</label>*@
+                    <br />
                     <span asp-validation-for="Password" class="text-danger"></span>
                 </div>               
                 <div>
-                    <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-primary">Log in</button>
+                    <button id="login-submit" type="submit">Login</button>
                 </div>
-                
+                <div>
+                    <div class="checkbox">
+                        <label asp-for="RememberMe" class="form-label" id="checkBox">
+                            <input class="form-check-input" asp-for="RememberMe" />
+                            @Html.DisplayNameFor(m => m.RememberMe)
+                        </label>
+                    </div>
+                </div>
             </form>
         </section>
     </div>  
