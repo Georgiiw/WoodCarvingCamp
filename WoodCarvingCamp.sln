@@ -21,7 +21,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{16
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WoodCarvingCamp.Services.Data", "WoodCarvingCamp.Services.Data\WoodCarvingCamp.Services.Data.csproj", "{70097481-7195-498D-91B9-92CB9B989605}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WoodCarvingCamp.Web.Infrastructure", "WoodCarvingCamp.Web.Infrastructure\WoodCarvingCamp.Web.Infrastructure.csproj", "{BF17E356-3129-45C4-B133-15BADEA13202}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WoodCarvingCamp.Web.Infrastructure", "WoodCarvingCamp.Web.Infrastructure\WoodCarvingCamp.Web.Infrastructure.csproj", "{BF17E356-3129-45C4-B133-15BADEA13202}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WoodCarvingCamp.Services.Data.Models", "WoodCarvingCamp.Services.Data.Models\WoodCarvingCamp.Services.Data.Models.csproj", "{F3A49C2E-91CF-4574-B5D4-B9219B66C28A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{BF17E356-3129-45C4-B133-15BADEA13202}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF17E356-3129-45C4-B133-15BADEA13202}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF17E356-3129-45C4-B133-15BADEA13202}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3A49C2E-91CF-4574-B5D4-B9219B66C28A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3A49C2E-91CF-4574-B5D4-B9219B66C28A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3A49C2E-91CF-4574-B5D4-B9219B66C28A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3A49C2E-91CF-4574-B5D4-B9219B66C28A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -69,6 +75,7 @@ Global
 		{1E6DF778-E02A-4E3E-B3EE-78F3636CB81B} = {FAEB2F12-AB87-47B4-B637-DE4DB166FF6C}
 		{70097481-7195-498D-91B9-92CB9B989605} = {163B207E-EFAE-4D7E-9EFE-C2BB1342E680}
 		{BF17E356-3129-45C4-B133-15BADEA13202} = {FAEB2F12-AB87-47B4-B637-DE4DB166FF6C}
+		{F3A49C2E-91CF-4574-B5D4-B9219B66C28A} = {163B207E-EFAE-4D7E-9EFE-C2BB1342E680}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E3C07686-AE1A-4214-A310-2F6BF618171A}

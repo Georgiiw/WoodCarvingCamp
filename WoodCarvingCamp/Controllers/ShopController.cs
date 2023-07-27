@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WoodCarvingCamp.Services.Data.Interfaces;
+using WoodCarvingCamp.Services.Data.Models.Shop;
 using WoodCarvingCamp.Web.ViewModels.Shop;
 
 namespace WoodCarvingCamp.Web.Controllers
@@ -9,22 +10,26 @@ namespace WoodCarvingCamp.Web.Controllers
     public class ShopController : Controller
     {
         private readonly IShopService shopService;
+        private readonly ICategoryService categoryService;
 
-        public ShopController(IShopService shopService)
+        public ShopController(IShopService shopService, ICategoryService categoryService)
         {
             this.shopService = shopService;
+            this.categoryService = categoryService;
         }
-        [AllowAnonymous]
-        public async Task<IActionResult> All()
-        {
-            if (!ModelState.IsValid)
-            {
-                return RedirectToAction("Index", "Home");
-            }
-            IEnumerable<AllProductsViewModel> allProducts =
-                await this.shopService.AllProductsAsync();
 
-            return View(allProducts);
+        [HttpGet]
+        [AllowAnonymous]
+        public async Task<IActionResult> All([FromQuery] AllProductsQuerryModel querryModel)
+        {
+            AllProductsFilteredServiceModel serviceModel = 
+                await this.shopService.AllAsync(querryModel);
+
+            querryModel.Products = serviceModel.Products;
+            querryModel.TotalProducts = serviceModel.TotalProductsCount;
+            querryModel.Categories = await this.categoryService.AllCategoryNamesAsync();
+
+            return this.View(querryModel);
         }
         [HttpGet]
         public async Task<IActionResult> Add()

@@ -33,6 +33,7 @@ namespace WoodCarvingCamp
 
             builder.Services.AddScoped<ICarvingCourseService, CarvingCourseService>();
             builder.Services.AddScoped<IShopService, ShopService>();
+            builder.Services.AddScoped<ICategoryService, CategoryService>();
 
             builder.Services.ConfigureApplicationCookie(cfg =>
             {

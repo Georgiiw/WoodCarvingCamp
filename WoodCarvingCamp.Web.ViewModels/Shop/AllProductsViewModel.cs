@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
+
 using WoodCarvingCamp.Data.Models;
+using WoodCarvingCamp.Web.ViewModels.Category;
 
 namespace WoodCarvingCamp.Web.ViewModels.Shop
 {
     public class AllProductsViewModel
     {
-        public int Id { get; set; }
+        public string Id { get; set; } = null!;
         public string Name { get; set; } = null!;
         [Display(Name = "Product Description")]
         public string Description { get; set; } = null!;

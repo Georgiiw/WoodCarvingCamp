@@ -224,4 +224,18 @@ footer {
     font-size: 20px;
     margin-right: 190px;
 }
-
+.text-danger {
+    background: transparent;
+}
+/*---Shop---*/
+.vl{
+    border-left: 6px solid #ffffff;
+    height: 900px;   
+}
+.col-md-2 {
+    
+    margin-top: 100px;
+}
+#shopWrapper{
+    background-color: aliceblue;
+}

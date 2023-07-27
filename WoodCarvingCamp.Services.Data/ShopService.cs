@@ -2,8 +2,10 @@
 using WoodCarvingCamp.Data;
 using WoodCarvingCamp.Data.Models;
 using WoodCarvingCamp.Services.Data.Interfaces;
+using WoodCarvingCamp.Services.Data.Models.Shop;
 using WoodCarvingCamp.Web.ViewModels.Category;
 using WoodCarvingCamp.Web.ViewModels.Shop;
+using WoodCarvingCamp.Web.ViewModels.Shop.Enums;
 
 namespace WoodCarvingCamp.Services.Data
 {
@@ -35,6 +37,49 @@ namespace WoodCarvingCamp.Services.Data
             await this.dbContext.SaveChangesAsync();
         }
 
+        public async Task<AllProductsFilteredServiceModel> AllAsync(AllProductsQuerryModel querryModel)
+        {
+            IQueryable<Product> productsQuerry = this.dbContext.Products.AsQueryable();
+
+            if (!string.IsNullOrWhiteSpace(querryModel.Category))
+            {
+                productsQuerry = productsQuerry
+                    .Where(p => p.Category.Name == querryModel.Category);
+            }
+
+            productsQuerry = querryModel.ProductSorting switch
+            {
+                ProductSorting.Newest => productsQuerry
+                .OrderByDescending(p => p.CreatedOn), 
+                ProductSorting.Oldest => productsQuerry
+                .OrderBy(p => p.CreatedOn),
+                ProductSorting.PriceAscending => productsQuerry
+                .OrderBy(p => p.Price),
+                ProductSorting.PriceDescending => productsQuerry
+                .OrderByDescending(p => p.Price),
+                _ => productsQuerry.OrderBy(p => p.Id )
+            };
+
+            IEnumerable<AllProductsViewModel> allProducts = await productsQuerry
+                .Select(p => new AllProductsViewModel
+                {
+                    Id = p.Id.ToString(),
+                    Name = p.Name,
+                    Description = p.Description,
+                    Price = p.Price,
+                    ImageUrl = p.ImageUrl,
+                    
+                }).ToArrayAsync();
+
+            int totalProducts = productsQuerry.Count();
+
+            return new AllProductsFilteredServiceModel()
+            {
+                TotalProductsCount = totalProducts,
+                Products = allProducts
+            };
+        }
+
         public async Task<IEnumerable<AllProductsViewModel>> AllProductsAsync()
         {
             IEnumerable<AllProductsViewModel> allProducts = await this
@@ -42,7 +87,7 @@ namespace WoodCarvingCamp.Services.Data
                 .Products
                 .Select(p => new AllProductsViewModel
                 {
-                    Id = p.Id,
+                    Id = p.Id.ToString(),
                     Name = p.Name,
                     Description = p.Description,
                     ImageUrl = p.ImageUrl,
