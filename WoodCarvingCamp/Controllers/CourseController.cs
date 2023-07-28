@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WoodCarvingCamp.Services.Data.Interfaces;
+using WoodCarvingCamp.Web.Infrastructure.Extensions;
 using WoodCarvingCamp.Web.ViewModels.CarvingCourse;
 
 namespace WoodCarvingCamp.Web.Controllers
@@ -31,6 +32,10 @@ namespace WoodCarvingCamp.Web.Controllers
         [HttpGet]
         public IActionResult Add()
         {
+            if (User.IsAdmin() == false)
+            {
+                return Unauthorized();
+            }
             try
             {
                 CarvingCourseFormModel courseModel = new CarvingCourseFormModel();
@@ -52,7 +57,10 @@ namespace WoodCarvingCamp.Web.Controllers
             {
                 return this.View(model);
             }
-
+            if (User.IsAdmin() == false)
+            {
+                return Unauthorized();
+            }
             try
             {
                
@@ -69,6 +77,10 @@ namespace WoodCarvingCamp.Web.Controllers
         [HttpGet]
         public async Task<IActionResult> Edit(string id)
         {
+            if (User.IsAdmin() == false)
+            {
+                return Unauthorized();
+            }
             try
             {
                 CarvingCourseFormModel courseModel =
@@ -91,7 +103,10 @@ namespace WoodCarvingCamp.Web.Controllers
             {
                 return this.View(courseModel);
             }
-
+            if (User.IsAdmin() == false)
+            {
+                return Unauthorized();
+            }
             try
             {
                 await this.carvingCourseService.EditByIdAsync(id, courseModel);
@@ -107,6 +122,10 @@ namespace WoodCarvingCamp.Web.Controllers
         }
         public async Task<IActionResult> Delete(string id)
         {
+            if (User.IsAdmin() == false)
+            {
+                return Unauthorized();
+            }
             try
             {
                 await this.carvingCourseService.DeleteCourse(id);

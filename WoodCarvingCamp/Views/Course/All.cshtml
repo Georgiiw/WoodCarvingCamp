@@ -5,11 +5,14 @@
 }
 <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 <h2 class="text-center">@ViewBag.Title</h2>
-<div>
-	<div class="d-grid gap-2 col-6 mx-auto">
-		<a asp-controller="Course" asp-action="Add" class="btn btn-primary">Add Course</a>
-	</div>
-</div>
+@if (User.IsAdmin())
+{
+	<div>
+		<div class="d-grid gap-2 col-6 mx-auto">
+			<a asp-controller="Course" asp-action="Add" class="btn btn-primary">Add Course</a>
+		</div>
+	</div>	
+}	
 @if (Model.Any())
 {
 	<div class="col">
@@ -22,13 +25,16 @@
 				<div class="card-body">
 					<button  type="button" class="addbtn" data-bs-toggle="collapse" data-bs-target="#collapseExample-@course.Id" aria-expanded="false" aria-controls="collapseExample">
 						Details
-					</button>										
-					<a asp-controller="Course" asp-action="Edit" asp-route-id="@course.Id" class="btn btn-warning">Edit</a>
-					<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#deleteModal-@course.Id">
-						Delete
 					</button>
+					@if (User.IsAdmin())
+					{
+						<a asp-controller="Course" asp-action="Edit" asp-route-id="@course.Id" class="btn btn-warning">Edit</a>
+						<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#deleteModal-@course.Id">
+							Delete
+						</button>					
+					}
 					<!-- Modal -->
-					<div class="modal fade" id="deleteModal-@course.Id" tabindex="1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					<div class="modal fade" id="deleteModal-@course.Id" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 						<div class="modal-dialog">
 							<div class="modal-content">
 								<div class="modal-header">
