@@ -8,6 +8,13 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="6.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WoodCarvingCamp.Common\WoodCarvingCamp.Common.csproj" />
+    <ProjectReference Include="..\WoodCarvingCamp.Data.Models\WoodCarvingCamp.Data.Models.csproj" />
   </ItemGroup>
 
 </Project>

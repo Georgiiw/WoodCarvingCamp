@@ -6,6 +6,8 @@ using WoodCarvingCamp.Services.Data.Interfaces;
 using WoodCarvingCamp.Services.Data;
 using Microsoft.AspNetCore.Mvc;
 using WoodCarvingCamp.Web.Infrastructure.ModelBinders;
+using WoodCarvingCamp.Web.Infrastructure.Extensions;
+using static WoodCarvingCamp.Common.AdminUserValidations.AdminValidations;
 
 namespace WoodCarvingCamp
 {
@@ -69,6 +71,8 @@ namespace WoodCarvingCamp
 
             app.UseAuthentication();
             app.UseAuthorization();
+
+            app.SeedAdministrator(AdminEmail);
 
             app.MapControllerRoute(
                 name: "default",
