@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\WoodCarvingCamp.Common\WoodCarvingCamp.Common.csproj" />
     <ProjectReference Include="..\WoodCarvingCamp.Data.Models\WoodCarvingCamp.Data.Models.csproj" />
   </ItemGroup>
 

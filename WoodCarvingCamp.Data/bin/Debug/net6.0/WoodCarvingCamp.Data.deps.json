@@ -11,6 +11,7 @@
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.5",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.5",
           "Microsoft.EntityFrameworkCore.Tools": "6.0.5",
+          "WoodCarvingCamp.Common": "1.0.0",
           "WoodCarvingCamp.Data.Models": "1.0.0"
         },
         "runtime": {
@@ -541,6 +542,11 @@
           }
         }
       },
+      "WoodCarvingCamp.Common/1.0.0": {
+        "runtime": {
+          "WoodCarvingCamp.Common.dll": {}
+        }
+      },
       "WoodCarvingCamp.Data.Common/1.0.0": {
         "runtime": {
           "WoodCarvingCamp.Data.Common.dll": {}
@@ -898,6 +904,11 @@
       "sha512": "sha512-CeWTdRNfRaSh0pm2gDTJFwVaXfTq6Xwv/sA887iwPTneW7oMtMlpvDIO+U60+3GWTB7Aom6oQwv5VZVUhQRdPQ==",
       "path": "system.windows.extensions/4.7.0",
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
+    },
+    "WoodCarvingCamp.Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "WoodCarvingCamp.Data.Common/1.0.0": {
       "type": "project",

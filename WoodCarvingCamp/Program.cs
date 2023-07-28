@@ -21,15 +21,15 @@ namespace WoodCarvingCamp
                 options.UseSqlServer(connectionString));
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-            builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = false)
-                .AddEntityFrameworkStores<WoodCarvingCampDbContext>();
-
-            builder.Services.Configure<IdentityOptions>(options =>
+            builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
             {
+                options.SignIn.RequireConfirmedAccount = false;
                 options.Password.RequireDigit = false;
                 options.Password.RequireUppercase = false;
                 options.Password.RequireNonAlphanumeric = false;
-            });
+            })
+                .AddRoles<IdentityRole<Guid>>()
+                .AddEntityFrameworkStores<WoodCarvingCampDbContext>();         
 
             builder.Services.AddScoped<ICarvingCourseService, CarvingCourseService>();
             builder.Services.AddScoped<IShopService, ShopService>();

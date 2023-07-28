@@ -694,6 +694,16 @@
           }
         }
       },
+      "WoodCarvingCamp.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/WoodCarvingCamp.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WoodCarvingCamp.Common.dll": {}
+        }
+      },
       "WoodCarvingCamp.Data.Common/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -2028,6 +2038,11 @@
         "version.txt"
       ]
     },
+    "WoodCarvingCamp.Common/1.0.0": {
+      "type": "project",
+      "path": "../WoodCarvingCamp.Common/WoodCarvingCamp.Common.csproj",
+      "msbuildProject": "../WoodCarvingCamp.Common/WoodCarvingCamp.Common.csproj"
+    },
     "WoodCarvingCamp.Data.Common/1.0.0": {
       "type": "project",
       "path": "../WoodCarvingCamp.Data.Common/WoodCarvingCamp.Data.Common.csproj",
@@ -2044,6 +2059,7 @@
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.5",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.5",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.5",
+      "WoodCarvingCamp.Common >= 1.0.0",
       "WoodCarvingCamp.Data.Models >= 1.0.0"
     ]
   },
@@ -2079,6 +2095,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "E:\\VS projects\\WoodCarvingCamp - CsharpWebCourse Project\\WoodCarvingCamp\\WoodCarvingCamp\\WoodCarvingCamp.Common\\WoodCarvingCamp.Common.csproj": {
+              "projectPath": "E:\\VS projects\\WoodCarvingCamp - CsharpWebCourse Project\\WoodCarvingCamp\\WoodCarvingCamp\\WoodCarvingCamp.Common\\WoodCarvingCamp.Common.csproj"
+            },
             "E:\\VS projects\\WoodCarvingCamp - CsharpWebCourse Project\\WoodCarvingCamp\\WoodCarvingCamp\\WoodCarvingCamp.Data.Models\\WoodCarvingCamp.Data.Models.csproj": {
               "projectPath": "E:\\VS projects\\WoodCarvingCamp - CsharpWebCourse Project\\WoodCarvingCamp\\WoodCarvingCamp\\WoodCarvingCamp.Data.Models\\WoodCarvingCamp.Data.Models.csproj"
             }

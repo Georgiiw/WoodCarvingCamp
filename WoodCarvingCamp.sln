@@ -23,7 +23,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WoodCarvingCamp.Services.Da
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WoodCarvingCamp.Web.Infrastructure", "WoodCarvingCamp.Web.Infrastructure\WoodCarvingCamp.Web.Infrastructure.csproj", "{BF17E356-3129-45C4-B133-15BADEA13202}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WoodCarvingCamp.Services.Data.Models", "WoodCarvingCamp.Services.Data.Models\WoodCarvingCamp.Services.Data.Models.csproj", "{F3A49C2E-91CF-4574-B5D4-B9219B66C28A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WoodCarvingCamp.Services.Data.Models", "WoodCarvingCamp.Services.Data.Models\WoodCarvingCamp.Services.Data.Models.csproj", "{F3A49C2E-91CF-4574-B5D4-B9219B66C28A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WoodCarvingCamp.Common", "WoodCarvingCamp.Common\WoodCarvingCamp.Common.csproj", "{C3032627-494E-45C6-BF7D-2BBC56214C0E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{F3A49C2E-91CF-4574-B5D4-B9219B66C28A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3A49C2E-91CF-4574-B5D4-B9219B66C28A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3A49C2E-91CF-4574-B5D4-B9219B66C28A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3032627-494E-45C6-BF7D-2BBC56214C0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3032627-494E-45C6-BF7D-2BBC56214C0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3032627-494E-45C6-BF7D-2BBC56214C0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3032627-494E-45C6-BF7D-2BBC56214C0E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
