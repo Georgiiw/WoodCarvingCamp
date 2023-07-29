@@ -94,15 +94,16 @@ footer {
     margin-bottom: 1rem;
 }
 .addbtn{
-    width: 200px;
+    width: 100%;
     padding: 15px 0;
     text-align: center;
-    margin: 20px 10px;
+    margin: auto;
     border-radius: 25px;    
     border: 2px solid #05d5c2;
     background: transparent;
     color: black;
     cursor: pointer;
+    overflow: auto;
 }
 .card-title{
     text-align: center;
@@ -228,14 +229,86 @@ footer {
     background: transparent;
 }
 /*---Shop---*/
-.vl{
-    border-left: 6px solid #ffffff;
-    height: 900px;   
+
+#shopWrapper {
+    background-color: antiquewhite;
+    box-shadow: 0 0 40px 20px rgba(0,0,0,0.26);
+    min-height: 700px;
+    height: auto;
+    margin-top: 50px;
+    box-sizing: border-box;
+    outline: none;
+    border-radius: 20px;
+    display: block;
+    overflow: auto;
 }
-.col-md-2 {
+#productsNavBar {
+    justify-content: center;
+    width: max-content;
+    margin: 15px;
     
-    margin-top: 100px;
 }
-#shopWrapper{
-    background-color: aliceblue;
+#productNavProperty {
+    margin-top: 15px;
+    margin-right: 10px;
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 20px;
+    background: #ffffff;   
 }
+.header{
+     text-align: center;
+     margin-bottom: 80px;
+     margin-top: 20px;
+}
+#categoryBtn {
+    width: 150px;
+    height: 43px;
+    margin-top: 10px;
+    border: 1px solid black;
+    border-radius: 20px;
+    background: #ffffff;
+    color: black;
+    cursor: pointer;
+    font-weight: 400;
+}
+#categoryBtn:hover{
+    transition: 0.1s ease-in;
+    background-color: #fff6f6;
+}
+.products{
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+.product {
+    position: initial;
+    width: 100%;
+    max-width: 25%;   
+    box-shadow: 0 0 10px 10px rgba(0,0,0,0.26);
+    display: flex;
+    flex-direction: column;
+    padding: 20px 20px 40px;
+    border-radius: 20px;
+    overflow: auto;
+}
+.product img {
+    display: grid;
+    place-items: center;
+    width: 100%;    
+    height: auto;
+    object-fit: cover;
+    border: 20px;
+}
+.productPrice{
+    font-size: 25px;
+}
+
+

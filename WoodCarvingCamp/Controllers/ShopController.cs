@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using WoodCarvingCamp.Services.Data.Interfaces;
 using WoodCarvingCamp.Services.Data.Models.Shop;
+using WoodCarvingCamp.Web.Infrastructure.Extensions;
 using WoodCarvingCamp.Web.ViewModels.Shop;
 
 namespace WoodCarvingCamp.Web.Controllers
@@ -34,6 +35,10 @@ namespace WoodCarvingCamp.Web.Controllers
         [HttpGet]
         public async Task<IActionResult> Add()
         {
+            if (User.IsAdmin() == false)
+            {
+                return Unauthorized();
+            }
             try
             {
                 ProductFormModel productModel = await this.shopService.GetAddProductAsync();              
@@ -51,6 +56,10 @@ namespace WoodCarvingCamp.Web.Controllers
             if (!ModelState.IsValid)
             {
                 return this.View(model);
+            }
+            if (User.IsAdmin() == false)
+            {
+                return Unauthorized();
             }
             try
             {

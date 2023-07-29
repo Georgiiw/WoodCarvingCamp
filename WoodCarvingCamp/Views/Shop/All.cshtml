@@ -2,22 +2,55 @@
 
 <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 
-<div class="d-grid gap-2 col-6 mx-auto">
-	<a asp-controller="Shop" asp-action="Add" class="btn btn-primary">Add Product</a>
-</div>
-<div class="container">
-	<div class="row" id="shopWrapper">
-		<div class="col-md-2">
-			<ul class="list-group">
-				@foreach (var category in Model.Categories)
-				{
-					<li class="list-group-item">@category</li>
-										
-				}
-			</ul>
+@if (User.IsAdmin())
+{
+	<div class="d-grid gap-2 col-6 mx-auto">
+		<a asp-controller="Shop" asp-action="Add" class="btn btn-primary">Add Product</a>
+	</div>	
+}
+<div>
+	<form method="get">
+		<div class="" >
+			<div class="container" id="shopWrapper">
+				<div id="productsNavBar">
+					<label asp-for="Category"></label>
+					<select asp-for="Category" id="productNavProperty">
+						<option value="">All</option>
+						@foreach (var category in Model.Categories)
+						{
+							<option value="@category">@category</option>
+						}
+					</select>
+					<label asp-for="ProductSorting"></label>
+					<select asp-for="ProductSorting" id="productNavProperty">
+						<option value="0">Newest</option>
+						<option value="1">Oldest</option>
+						<option value="2">Price Up</option>
+						<option value="3">Price Down</option>
+					</select>	
+				
+					<input type="submit" value="Search" id="categoryBtn" />				
+				</div>
+				<div class="products">
+					<div class="header">
+						@if (Model.Category == null)
+							{
+								<h2>All Products</h2>
+							}
+							else
+							{
+								<h2>@Model.Category	</h2>	
+							}
+					</div>
+					<div class="row products">
+						@foreach (var product in Model.Products)
+						{
+							<partial name="_ShopPartial" model="@product" />
+
+						}
+					</div>
+				</div>
+			</div>
 		</div>
-		<div class="col-md-1 ">
-			<div class="vl"></div>
-		</div>
-	</div>
+	</form>
 </div>

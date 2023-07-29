@@ -1,0 +1,16 @@
+﻿@model AllProductsViewModel
+
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+
+<div class="product " id="cardProduct" style="width: 25rem;">
+	<div class="image"></div>
+	<img src="@Model.ImageUrl">
+	<h3 class="card-title">@Model.Name</h3>
+	<div class="card-body">
+		<p id="productPrice">$@Model.Price</p>
+		<div class="d-grid gap-2 d-md-flex justify-content-md-start">
+			<button class="btn btn-primary" type="button">Add to cart</button> 
+		</div>
+	</div>
+</div>
+
