@@ -1142,8 +1142,11 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.5",
           "WoodCarvingCamp.Data": "1.0.0",
           "WoodCarvingCamp.Services.Data.Models": "1.0.0",
+          "WoodCarvingCamp.Web.Infrastructure": "1.0.0",
           "WoodCarvingCamp.Web.ViewModels": "1.0.0"
         },
         "compile": {

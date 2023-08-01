@@ -7,9 +7,9 @@
 	<img src="@Model.ImageUrl">
 	<h3 class="card-title">@Model.Name</h3>
 	<div class="card-body">
-		<p id="productPrice">$@Model.Price</p>
-		<div class="d-grid gap-2 d-md-flex justify-content-md-start">
-			<button class="btn btn-primary" type="button">Add to cart</button> 
+		<p>Price: <strong>$@Model.Price</strong></p>
+		<div class="d-grid gap-2 d-md-flex justify-content-md-start">		
+			<a asp-controller="Shop" asp-action="Details" asp-route-id="@Model.Id" class="btn btn-primary">Detailst</a>
 		</div>
 	</div>
 </div>

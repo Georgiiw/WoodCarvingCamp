@@ -113,5 +113,30 @@ namespace WoodCarvingCamp.Services.Data
 
             return model;
         }
+
+        public async Task<bool> ExistsByIdAsync(string productId)
+        {
+            bool result = await dbContext.Products
+                .AnyAsync(p => p.Id.ToString() == productId);
+
+            return result;
+        }
+
+        public async Task<ProductDetailsViewModel> GetDetailsByIdAsync(string productId)
+        {
+            Product product = await dbContext
+                .Products
+                .Include(p => p.Category)
+                .FirstAsync(h => h.Id.ToString() == productId);
+
+            return new ProductDetailsViewModel
+            {
+                Id = product.Id.ToString(),
+                ImageUrl = product.ImageUrl,
+                Price = product.Price,
+                Description = product.Description,
+                Category = product.Category.Name,              
+            };
+        }
     }
 }

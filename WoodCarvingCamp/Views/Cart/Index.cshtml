@@ -1,0 +1,22 @@
+﻿@model ShoppingCartViewModel
+
+
+<h1 class="text-align-center">Cart</h1>
+@if (Model != null && Model.Products.Count() > 0)
+{
+	@foreach (var product in Model.Products)
+	{
+		<ul class="list-group list-group-horizontal">
+		  <li class="list-group-item">@product.Name</li>
+		  <li class="list-group-item">@product.Price</li>
+		  <li class="list-group-item">A third item</li>
+		</ul>
+		
+	}
+	
+}
+else 
+{
+	<p>Your cart is empty! Continue shopping:</p>
+	<a asp-controller="Shop" asp-action="All" class="btn btn-primary">Go to products</a>
+}

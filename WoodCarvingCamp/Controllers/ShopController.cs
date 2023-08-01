@@ -73,5 +73,29 @@ namespace WoodCarvingCamp.Web.Controllers
 
             return this.RedirectToAction("All", "Shop");
         }
+
+        [HttpGet]
+        [AllowAnonymous]
+        public async Task<IActionResult> Details(string id)
+        {
+            bool productExists = await shopService
+                .ExistsByIdAsync(id);
+            if (!productExists)
+            {             
+                return RedirectToAction("All", "Shop");
+            }
+
+            try
+            {
+                AllProductsViewModel viewModel = await shopService
+                    .GetDetailsByIdAsync(id);               
+
+                return View(viewModel);
+            }
+            catch (Exception)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+        }
     }
 }

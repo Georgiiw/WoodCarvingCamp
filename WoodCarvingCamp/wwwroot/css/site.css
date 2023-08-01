@@ -93,13 +93,13 @@ footer {
     padding: 5px 5px 5px 5px;
     margin-bottom: 1rem;
 }
-.addbtn{
+.addbtn {
     width: 100%;
     padding: 15px 0;
     text-align: center;
     margin: auto;
-    border-radius: 25px;    
-    border: 2px solid #05d5c2;
+    border-radius: 25px;
+    border: 2px solid antiquewhite;
     background: transparent;
     color: black;
     cursor: pointer;
@@ -305,10 +305,7 @@ footer {
     width: 100%;    
     height: auto;
     object-fit: cover;
-    border: 20px;
-}
-.productPrice{
-    font-size: 25px;
+    border-radius: 20px;
 }
 
 

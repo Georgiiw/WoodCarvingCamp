@@ -7,8 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\WoodCarvingCamp.Data\WoodCarvingCamp.Data.csproj" />
     <ProjectReference Include="..\WoodCarvingCamp.Services.Data.Models\WoodCarvingCamp.Services.Data.Models.csproj" />
+    <ProjectReference Include="..\WoodCarvingCamp.Web.Infrastructure\WoodCarvingCamp.Web.Infrastructure.csproj" />
     <ProjectReference Include="..\WoodCarvingCamp.Web.ViewModels\WoodCarvingCamp.Web.ViewModels.csproj" />
   </ItemGroup>
 

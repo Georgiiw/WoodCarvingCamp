@@ -14,5 +14,9 @@ namespace WoodCarvingCamp.Web.Infrastructure.Extensions
         {
             return user.IsInRole(AdminRoleName);
         }
+        public static string? GetId(this ClaimsPrincipal user)
+        {
+            return user.FindFirstValue(ClaimTypes.NameIdentifier);
+        }
     }
 }

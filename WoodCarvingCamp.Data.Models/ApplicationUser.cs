@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using static WoodCarvingCamp.Data.Common.EntityValidationConstants.UserValidations;
 namespace WoodCarvingCamp.Data.Models
 {
@@ -22,6 +23,10 @@ namespace WoodCarvingCamp.Data.Models
         [StringLength(LastNameMaxLength)]
         public string LastName { get; set; } = null!;
         public virtual ICollection<CarvingCourse> CarvingCourses { get; set; }
+
+        [ForeignKey(nameof(ShoppingCart))]
+        public int? ShoppingCartId { get; set; }
+        public ShoppingCart? ShoppingCart { get; set; }
 
     }
 }

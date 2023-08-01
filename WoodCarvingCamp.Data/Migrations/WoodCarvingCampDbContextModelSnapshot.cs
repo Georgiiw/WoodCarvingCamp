@@ -157,6 +157,21 @@ namespace WoodCarvingCamp.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("ProductShoppingCart", b =>
+                {
+                    b.Property<int>("ProductsId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ShoppingCartId")
+                        .HasColumnType("int");
+
+                    b.HasKey("ProductsId", "ShoppingCartId");
+
+                    b.HasIndex("ShoppingCartId");
+
+                    b.ToTable("ProductShoppingCart");
+                });
+
             modelBuilder.Entity("WoodCarvingCamp.Data.Models.ApplicationUser", b =>
                 {
                     b.Property<Guid>("Id")
@@ -213,6 +228,9 @@ namespace WoodCarvingCamp.Data.Migrations
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("ShoppingCartId")
+                        .HasColumnType("int");
+
                     b.Property<bool>("TwoFactorEnabled")
                         .HasColumnType("bit");
 
@@ -230,14 +248,16 @@ namespace WoodCarvingCamp.Data.Migrations
                         .HasDatabaseName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
+                    b.HasIndex("ShoppingCartId");
+
                     b.ToTable("AspNetUsers", (string)null);
 
                     b.HasData(
                         new
                         {
-                            Id = new Guid("9da6c903-33ba-4fd5-bb73-cee3c4b45613"),
+                            Id = new Guid("090c3c5d-f3b2-488a-9849-c64403080049"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "bbc7639f-3602-41a9-b79e-55b738cd2062",
+                            ConcurrencyStamp = "9c385dd9-4c81-4f6e-ae8a-1daa27806770",
                             Email = "admin@woodcarvingcamp.bg",
                             EmailConfirmed = false,
                             FirstName = "Admin",
@@ -245,17 +265,17 @@ namespace WoodCarvingCamp.Data.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "admin@woodcarvingcamp.bg",
                             NormalizedUserName = "admin@woodcarvingcamp.bg",
-                            PasswordHash = "AQAAAAEAACcQAAAAEBfCboqTz3pdxayJNwPsDgPET0SfPYbRqnjx0GoiXnTyTu+LeFqlEjeUW7PGuJD+zQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAELIbdhG37Na2nlYFjPksREzawdrB3hH77EtuciHowgeoBW8oUuxUDNy+OlM8R5aV+g==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "61c82727-2b58-432e-bf11-a9f646444d66",
+                            SecurityStamp = "415115c8-e8b5-43b1-8df7-0ca404122531",
                             TwoFactorEnabled = false,
                             UserName = "admin@woodcarvingcamp.bg"
                         },
                         new
                         {
-                            Id = new Guid("43bc0bd0-c88b-4dcf-9b06-28f3d15e1547"),
+                            Id = new Guid("a94e657b-7745-41f0-9097-6e9a7d722e1c"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "cb0d8939-d094-47db-be86-3165a46587b1",
+                            ConcurrencyStamp = "3eff63e5-4c95-448d-b15a-f04373bbffd5",
                             Email = "stefcho@abv.bg",
                             EmailConfirmed = false,
                             FirstName = "Stefcho",
@@ -263,9 +283,9 @@ namespace WoodCarvingCamp.Data.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "stefcho@abv.bg",
                             NormalizedUserName = "stefcho@abv.bg",
-                            PasswordHash = "AQAAAAEAACcQAAAAEBeD5vQG9FpTf6QKLyQhyYK4TnslLf6vfU7QgF/NYxWHw/ZbLaPYo0cwae9JEgdP4w==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEA3cZkGYcEY7NGCIZZumZg2b0F4nnWTIrdBpAGNOsTGERoAlWi5MAHu7l9z0jd7t+w==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "08e93d7c-e97b-48eb-8c1c-a23c8ab00bbd",
+                            SecurityStamp = "c8aa40be-5df5-453b-bd0f-05aceb486572",
                             TwoFactorEnabled = false,
                             UserName = "stefcho@abv.bg"
                         });
@@ -489,6 +509,25 @@ namespace WoodCarvingCamp.Data.Migrations
                     b.ToTable("Products");
                 });
 
+            modelBuilder.Entity("WoodCarvingCamp.Data.Models.ShoppingCart", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<Guid?>("UserId")
+                        .IsRequired()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("ShoppingCarts");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole<System.Guid>", null)
@@ -540,6 +579,30 @@ namespace WoodCarvingCamp.Data.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("ProductShoppingCart", b =>
+                {
+                    b.HasOne("WoodCarvingCamp.Data.Models.Product", null)
+                        .WithMany()
+                        .HasForeignKey("ProductsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("WoodCarvingCamp.Data.Models.ShoppingCart", null)
+                        .WithMany()
+                        .HasForeignKey("ShoppingCartId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("WoodCarvingCamp.Data.Models.ApplicationUser", b =>
+                {
+                    b.HasOne("WoodCarvingCamp.Data.Models.ShoppingCart", "ShoppingCart")
+                        .WithMany()
+                        .HasForeignKey("ShoppingCartId");
+
+                    b.Navigation("ShoppingCart");
+                });
+
             modelBuilder.Entity("WoodCarvingCamp.Data.Models.CarvingCourse", b =>
                 {
                     b.HasOne("WoodCarvingCamp.Data.Models.ApplicationUser", null)
@@ -571,6 +634,17 @@ namespace WoodCarvingCamp.Data.Migrations
                         .IsRequired();
 
                     b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("WoodCarvingCamp.Data.Models.ShoppingCart", b =>
+                {
+                    b.HasOne("WoodCarvingCamp.Data.Models.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("WoodCarvingCamp.Data.Models.ApplicationUser", b =>

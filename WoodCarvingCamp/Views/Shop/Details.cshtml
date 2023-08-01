@@ -1,0 +1,29 @@
+﻿@model ProductDetailsViewModel
+
+<a asp-controller="Cart" asp-action="Add" asp-route-id="@Model.Id" class="btn btn-primary">Add to cart</a>
+@{
+    ViewBag.Title = "House Details";
+}
+
+<h2 class="text-center">@ViewBag.Title</h2>
+<hr />
+
+<div class="container" style="display:inline">
+    <div class="row">
+        <div class="col-4">
+            <img class="card-img-top" style="width: 20rem;"
+                 src="@Model.ImageUrl" alt="House Image">
+        </div>
+        <div class="card col-8 border-0">
+            <p style="font-size:25px;"><u>@Model.Name</u></p>           
+            <p>@Model.Description</p>
+            <p>Category: <b>@Model.Category</b></p>                  
+            <p></p>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
