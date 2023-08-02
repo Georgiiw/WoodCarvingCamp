@@ -11,8 +11,8 @@ namespace WoodCarvingCamp.Web.ViewModels.Cart
     {
         public ShoppingCartViewModel()
         {
-            this.Products = new List<ShoppingCartProductViewModel>();
+            this.CartItems = new List<ShoppingCartProductViewModel>();
         }      
-        public ICollection<ShoppingCartProductViewModel> Products { get; set; }
+        public ICollection<ShoppingCartProductViewModel> CartItems { get; set; }
     }
 }

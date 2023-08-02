@@ -32,11 +32,24 @@ namespace WoodCarvingCamp.Services.Data
                 .FirstOrDefaultAsync(p => p.Id == productId);
 
 
+            CartItem cartItem = new CartItem()
+            {
+                ProductId = product.Id,
+                Quantity = 1,
+
+            };
+            cartItem.Product = product;
+            cartItem.Product.Name = product.Name;
+            cartItem.Product.Description = product.Description;
+            cartItem.Product.Price = product.Price;           
+            cartItem.Product.CategoryId = product.CategoryId;
+
             var user = await this.dbContext
                .Users
                .Where(u => u.Id.ToString() == userId)
                .Include(sc => sc.ShoppingCart)
-               .ThenInclude(c => c.Products)
+               .ThenInclude(c => c.CartItems)
+               .ThenInclude(p => p.Product)
                .FirstOrDefaultAsync();
 
             if (product == null)
@@ -60,7 +73,18 @@ namespace WoodCarvingCamp.Services.Data
                 await this.dbContext.AddAsync(shoppingCart);
             }
            
-            user.ShoppingCart.Products.Add(product);
+            if (user.ShoppingCart.CartItems.Where(c => c.ProductId == cartItem.ProductId).Any())
+            {
+                foreach (var item in user.ShoppingCart.CartItems.Where(p => p.ProductId == cartItem.ProductId))
+                {
+                    item.Quantity += 1;
+                }               
+            }
+            else
+            {
+                user.ShoppingCart.CartItems.Add(cartItem);
+
+            }
             await this.dbContext.SaveChangesAsync();
 
         }
@@ -71,25 +95,27 @@ namespace WoodCarvingCamp.Services.Data
                 .Users
                 .Where(u => u.Id.ToString() == userId)
                 .Include(sc => sc.ShoppingCart)
-                .ThenInclude(c => c.Products)              
+                .ThenInclude(c => c.CartItems)
+                .ThenInclude(p => p.Product)
                 .FirstOrDefaultAsync();
 
             if (user == null || user.ShoppingCartId == null)
             {
                  return null;
             }
-
-            var products = user.ShoppingCart?.Products
+            
+            var cartItems = user.ShoppingCart?.CartItems
                 .Select(p => new ShoppingCartProductViewModel
                 {
                     Id = p.Id,
-                    Name = p.Name,
-                    Price = p.Price
+                    Product = p.Product,
+                    Quantity = p.Quantity
+                    
                 }).ToList();
 
             var cart = new ShoppingCartViewModel()
             {
-                Products = products
+                CartItems = cartItems
             };
 
             return cart;

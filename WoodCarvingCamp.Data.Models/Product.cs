@@ -8,11 +8,7 @@ using static WoodCarvingCamp.Data.Common.EntityValidationConstants.ProductValida
 namespace WoodCarvingCamp.Data.Models
 {
     public class Product
-    {
-        public Product()
-        {
-            ShoppingCart = new HashSet<ShoppingCart>();
-        }
+    {     
         [Key]
         public int Id { get; set; }
 
@@ -39,9 +35,7 @@ namespace WoodCarvingCamp.Data.Models
 
         [ForeignKey(nameof(Category))]
         public int CategoryId { get; set; }
-        public virtual Category Category { get; set; } = null!;
-
-        public ICollection<ShoppingCart> ShoppingCart { get; set; }
+        public virtual Category Category { get; set; } = null!;            
 
     }
 }

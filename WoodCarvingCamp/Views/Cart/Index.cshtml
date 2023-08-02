@@ -2,21 +2,31 @@
 
 
 <h1 class="text-align-center">Cart</h1>
-@if (Model != null && Model.Products.Count() > 0)
+@{
+	decimal totalPrice = 0;
+}
+@if (Model != null && Model.CartItems.Count() > 0)
 {
-	@foreach (var product in Model.Products)
-	{
+	@foreach (var item in Model.CartItems)
+	{		
+		decimal price = item.Product.Price * item.Quantity;
+		totalPrice += price;
+
 		<ul class="list-group list-group-horizontal">
-		  <li class="list-group-item">@product.Name</li>
-		  <li class="list-group-item">@product.Price</li>
-		  <li class="list-group-item">A third item</li>
+		  <li class="list-group-item">Product Name: @item.Product.Name</li>		  
+		  <li class="list-group-item" id="priceId">Price: $@price</li>		  
+		  <li class="list-group-item" id="priceId">Quantity: @item.Quantity</li>		  
 		</ul>
 		
 	}
-	
+	<br />
+	<li class="list-group-item" id="priceId">Total Price: $@totalPrice</li>	
+	<a asp-controller="Shop" asp-action="All" class="btn btn-primary">Continue shopping!</a>
 }
 else 
 {
 	<p>Your cart is empty! Continue shopping:</p>
 	<a asp-controller="Shop" asp-action="All" class="btn btn-primary">Go to products</a>
 }
+
+

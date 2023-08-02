@@ -12,7 +12,7 @@ namespace WoodCarvingCamp.Data.Models
     {
         public ShoppingCart()
         {
-            this.Products = new HashSet<Product>();
+            this.CartItems = new HashSet<CartItem>();
         }      
         [Key]
         public int Id { get; set; }
@@ -21,7 +21,7 @@ namespace WoodCarvingCamp.Data.Models
         [Required]
         public ApplicationUser? User { get; set; }
 
-        public ICollection<Product> Products { get; set; }
+        public ICollection<CartItem> CartItems { get; set; }
 
     }
 }
