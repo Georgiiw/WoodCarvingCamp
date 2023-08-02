@@ -143,5 +143,22 @@ namespace WoodCarvingCamp.Web.Controllers
 
             return RedirectToAction("All", "Shop");
         }
+        public async Task<IActionResult> Delete(string id)
+        {
+            if (User.IsAdmin() == false)
+            {
+                return Unauthorized();
+            }
+            try
+            {
+                await this.shopService.DeleteProduct(id);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            return RedirectToAction("All", "Shop");
+        }
     }
 }

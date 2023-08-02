@@ -13,5 +13,6 @@ namespace WoodCarvingCamp.Services.Data.Interfaces
         Task<AllProductsFilteredServiceModel> AllAsync(AllProductsQuerryModel querryModel);
         Task<ProductFormModel> GetForEditByIdAsync(string id);
         Task EditByIdAsync(string id, ProductFormModel courseModel);
+        Task DeleteProduct(string id);
     }
 }

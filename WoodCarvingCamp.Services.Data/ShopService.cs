@@ -158,5 +158,15 @@ namespace WoodCarvingCamp.Services.Data
 
             await this.dbContext.SaveChangesAsync();
         }
+
+        public async Task DeleteProduct(string id)
+        {
+            Product productToDelete = await this.dbContext
+               .Products
+               .FirstAsync(c => c.Id.ToString() == id);
+
+            this.dbContext.Remove(productToDelete);
+            await this.dbContext.SaveChangesAsync();
+        }
     }
 }

@@ -25,14 +25,7 @@
 				<div class="card-body">
 					<button  type="button" class="addbtn" data-bs-toggle="collapse" data-bs-target="#collapseExample-@course.Id" aria-expanded="false" aria-controls="collapseExample">
 						Details
-					</button>
-					@if (User.IsAdmin())
-					{
-						<a asp-controller="Course" asp-action="Edit" asp-route-id="@course.Id" class="btn btn-warning">Edit</a>
-						<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#deleteModal-@course.Id">
-							Delete
-						</button>					
-					}
+					</button>			
 					<!-- Modal -->
 					<div class="modal fade" id="deleteModal-@course.Id" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 						<div class="modal-dialog">
@@ -66,6 +59,13 @@
 							{
 								<p>Price: <strong>$@course.Price</strong></p>								
 								<button type="button" class="btn btn-success">Purchase</button>
+							}
+							@if (User.IsAdmin())
+							{
+								<a asp-controller="Course" asp-action="Edit" asp-route-id="@course.Id" class="btn btn-warning">Edit</a>
+								<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#deleteModal-@course.Id">
+									Delete
+								</button>					
 							}
 						</div>
 					</div>

@@ -8,12 +8,32 @@
 	<h3 class="card-title">@Model.Name</h3>
 	<div class="card-body">
 		<p>Price: <strong>$@Model.Price</strong></p>
-		<div class="d-grid gap-2 d-md-flex justify-content-md-start">		
+		<div class="d-grid gap-2 d-md-flex justify-content-md-start">
 			<a asp-controller="Shop" asp-action="Details" asp-route-id="@Model.Id" class="btn btn-primary">Detailst</a>
 			@if (User.IsAdmin())
 			{
-				<a asp-controller="Shop" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Edit</a>										
+				<a asp-controller="Shop" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Edit</a>
+				<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#deleteModal-@Model.Id">
+					Delete
+				</button>
 			}
+			<!-- Modal -->
+			<div class="modal fade" id="deleteModal-@Model.Id" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h1 class="modal-title fs-5" id="exampleModalLabel">Are you sure you want to delete @Model.Name</h1>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+							<a asp-controller="Shop" asp-action="Delete" asp-route-id="@Model.Id"
+							   class="btn btn-danger">Delete</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Modal -->
 		</div>
 	</div>
 </div>
