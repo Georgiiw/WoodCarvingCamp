@@ -97,5 +97,51 @@ namespace WoodCarvingCamp.Web.Controllers
                 return RedirectToAction("Index", "Home");
             }
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Edit(string id)
+        {
+            if (User.IsAdmin() == false)
+            {
+                return Unauthorized();
+            }
+            try
+            {
+                ProductFormModel productModel =
+                    await this.shopService.GetForEditByIdAsync(id);
+
+                return View(productModel);
+
+            }
+            catch (Exception)
+            {
+
+                return this.RedirectToAction("All", "Shop");
+            }
+        }
+        [HttpPost]
+        public async Task<IActionResult> Edit(ProductFormModel model, string id)
+        {
+            if (!ModelState.IsValid)
+            {
+                return this.View(model);
+            }
+            if (User.IsAdmin() == false)
+            {
+                return Unauthorized();
+            }
+            try
+            {
+                await this.shopService.EditByIdAsync(id, model);
+            }
+            catch (Exception)
+            {
+                ModelState.AddModelError(string.Empty, "An error occurred.");
+
+                return View(model);
+            }
+
+            return RedirectToAction("All", "Shop");
+        }
     }
 }

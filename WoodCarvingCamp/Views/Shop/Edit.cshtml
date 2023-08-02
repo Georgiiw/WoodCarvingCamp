@@ -1,0 +1,50 @@
+﻿@model ProductFormModel
+
+@{
+    ViewBag.Title = "Edit Product";
+}
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+<h2 class="text-center">@ViewBag.Title</h2>
+
+<div class="row">
+	<form asp-action="Edit" method="post">
+		<div class="mb-3">
+			<label asp-for="Name" class="form-label">Product name</label>
+			<input asp-for="Name" class="form-control" aria-required="true">
+			<span asp-validation-for="Name" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="ImageUrl" class="form-label">Image link</label>
+			<input asp-for="ImageUrl" class="form-control" aria-required="true">
+			<span asp-validation-for="ImageUrl" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="Description" class="form-label">Product Description</label>
+			<textarea asp-for="Description" class="form-control" rows="3" aria-required="true"></textarea>
+			<span asp-validation-for="Description" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="Price" class="form-label">Price</label>
+			<input asp-for="Price" class="form-control" aria-required="true">		
+		</div>				
+		<div class="mb-3">
+                <label asp-for="CategoryId" class="form-label"></label>
+                <select asp-for="CategoryId" class="form-control" aria-required="true">
+                    @foreach (var category in Model.Categories)
+                    {
+                            <option value="@category.Id">@category.Name</option>
+                    }
+                </select>
+                <span asp-validation-for="CategoryId" class="small text-danger"></span>
+        </div>
+		
+
+		<button type="submit" class="btn btn-primary" value="Edit">Edit Product</button>
+
+	</form>
+</div>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

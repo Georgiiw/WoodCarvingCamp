@@ -78,24 +78,7 @@ namespace WoodCarvingCamp.Services.Data
                 TotalProductsCount = totalProducts,
                 Products = allProducts
             };
-        }
-
-        public async Task<IEnumerable<AllProductsViewModel>> AllProductsAsync()
-        {
-            IEnumerable<AllProductsViewModel> allProducts = await this
-                .dbContext
-                .Products
-                .Select(p => new AllProductsViewModel
-                {
-                    Id = p.Id.ToString(),
-                    Name = p.Name,
-                    Description = p.Description,
-                    ImageUrl = p.ImageUrl,
-                    Price = p.Price,
-                    CreatedOn = p.CreatedOn,                   
-                }).ToListAsync();
-            return allProducts;
-        }
+        }    
 
         public async Task<ProductFormModel> GetAddProductAsync()
         {
@@ -137,6 +120,43 @@ namespace WoodCarvingCamp.Services.Data
                 Description = product.Description,
                 Category = product.Category.Name,              
             };
+        }
+
+        public async Task<ProductFormModel> GetForEditByIdAsync(string id)
+        {
+            Product product = await this.dbContext.Products.FirstAsync(p => p.Id.ToString() == id);
+
+            var categories = await this.dbContext.Categories
+                .Select(c => new CategoryViewModel()
+                {
+                    Id = c.Id,
+                    Name = c.Name
+                }).ToListAsync();
+
+            return new ProductFormModel
+            {
+                Name = product.Name,
+                Description = product.Description,
+                ImageUrl = product.ImageUrl,
+                Price = product.Price,
+                Categories = categories,              
+            };
+        }
+
+        public async Task EditByIdAsync(string id, ProductFormModel editedProduct)
+        {
+            Product productToEdit = await this.dbContext
+               .Products
+               .FirstAsync(c => c.Id.ToString() == id);
+
+            productToEdit.Name = editedProduct.Name;
+            productToEdit.Description = editedProduct.Description;
+            productToEdit.ImageUrl = editedProduct.ImageUrl;           
+            productToEdit.Price = editedProduct.Price;
+            productToEdit.CategoryId = editedProduct.CategoryId;
+
+
+            await this.dbContext.SaveChangesAsync();
         }
     }
 }

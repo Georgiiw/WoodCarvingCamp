@@ -255,9 +255,9 @@ namespace WoodCarvingCamp.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("090c3c5d-f3b2-488a-9849-c64403080049"),
+                            Id = new Guid("f8a67313-d93c-417d-b6f1-3516c9344e0e"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "9c385dd9-4c81-4f6e-ae8a-1daa27806770",
+                            ConcurrencyStamp = "64a60bd4-798b-49bd-a79f-87a46a08d049",
                             Email = "admin@woodcarvingcamp.bg",
                             EmailConfirmed = false,
                             FirstName = "Admin",
@@ -265,17 +265,17 @@ namespace WoodCarvingCamp.Data.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "admin@woodcarvingcamp.bg",
                             NormalizedUserName = "admin@woodcarvingcamp.bg",
-                            PasswordHash = "AQAAAAEAACcQAAAAELIbdhG37Na2nlYFjPksREzawdrB3hH77EtuciHowgeoBW8oUuxUDNy+OlM8R5aV+g==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEIlQjOYKzakDYbqEXum94PPNbs3Gt1Nou7AqCgSX4HlQl7lqnwaypCjXCCLh0a3b3Q==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "415115c8-e8b5-43b1-8df7-0ca404122531",
+                            SecurityStamp = "7c3442fa-669d-4058-803d-b6433c955042",
                             TwoFactorEnabled = false,
                             UserName = "admin@woodcarvingcamp.bg"
                         },
                         new
                         {
-                            Id = new Guid("a94e657b-7745-41f0-9097-6e9a7d722e1c"),
+                            Id = new Guid("dfc6ee85-e1cd-45d5-82b8-f5bbba23d087"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "3eff63e5-4c95-448d-b15a-f04373bbffd5",
+                            ConcurrencyStamp = "2c56e81d-3c89-4257-b740-0a031b947c98",
                             Email = "stefcho@abv.bg",
                             EmailConfirmed = false,
                             FirstName = "Stefcho",
@@ -283,9 +283,9 @@ namespace WoodCarvingCamp.Data.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "stefcho@abv.bg",
                             NormalizedUserName = "stefcho@abv.bg",
-                            PasswordHash = "AQAAAAEAACcQAAAAEA3cZkGYcEY7NGCIZZumZg2b0F4nnWTIrdBpAGNOsTGERoAlWi5MAHu7l9z0jd7t+w==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEN22mHcrO94Zx487Y/ltdR8HzGExGY82y+rYIy9Yvp4ZL+8Q1LIUkupQosyB9qjORg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "c8aa40be-5df5-453b-bd0f-05aceb486572",
+                            SecurityStamp = "17a65028-0858-45c9-9c38-7bccbdec6bb3",
                             TwoFactorEnabled = false,
                             UserName = "stefcho@abv.bg"
                         });

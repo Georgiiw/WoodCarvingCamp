@@ -10,6 +10,10 @@
 		<p>Price: <strong>$@Model.Price</strong></p>
 		<div class="d-grid gap-2 d-md-flex justify-content-md-start">		
 			<a asp-controller="Shop" asp-action="Details" asp-route-id="@Model.Id" class="btn btn-primary">Detailst</a>
+			@if (User.IsAdmin())
+			{
+				<a asp-controller="Shop" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Edit</a>										
+			}
 		</div>
 	</div>
 </div>

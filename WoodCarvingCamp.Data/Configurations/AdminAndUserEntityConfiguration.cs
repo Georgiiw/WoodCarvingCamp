@@ -19,6 +19,7 @@ namespace WoodCarvingCamp.Data.Configurations
             var hasher = new PasswordHasher<ApplicationUser>();
             ApplicationUser adminUser = new ApplicationUser()
             {
+                Id = Guid.Parse("f8a67313-d93c-417d-b6f1-3516c9344e0e"),
                 FirstName = "Admin",
                 LastName = "Adminov",
                 Email = AdminEmail,
@@ -32,6 +33,7 @@ namespace WoodCarvingCamp.Data.Configurations
 
             ApplicationUser basicUser = new ApplicationUser()
             {
+                Id = Guid.Parse("dfc6ee85-e1cd-45d5-82b8-f5bbba23d087"),
                 FirstName = "Stefcho",
                 LastName = "Stefanov",
                 Email = "stefcho@abv.bg",
