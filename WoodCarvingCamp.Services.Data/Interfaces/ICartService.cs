@@ -9,5 +9,7 @@ namespace WoodCarvingCamp.Services.Data.Interfaces
     {
         Task AddProductToCart(int productId, string userId);
         Task<ShoppingCartViewModel> GetShoppingCart(string userId);
+
+        Task RemoveItemFromCart(int productId, string userId);
     }
 }

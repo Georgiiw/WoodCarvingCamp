@@ -44,7 +44,7 @@ namespace WoodCarvingCamp.Services.Data
             cartItem.Product.Price = product.Price;           
             cartItem.Product.CategoryId = product.CategoryId;
 
-            var user = await this.dbContext
+            ApplicationUser? user = await this.dbContext
                .Users
                .Where(u => u.Id.ToString() == userId)
                .Include(sc => sc.ShoppingCart)
@@ -120,6 +120,38 @@ namespace WoodCarvingCamp.Services.Data
 
             return cart;
 
+        }
+
+        public async Task RemoveItemFromCart(int productId, string userId)
+        {
+            ApplicationUser? user = await this.dbContext
+               .Users
+               .Where(u => u.Id.ToString() == userId)
+               .Include(sc => sc.ShoppingCart)
+               .ThenInclude(c => c.CartItems)
+               .ThenInclude(p => p.Product)
+               .FirstOrDefaultAsync();
+
+            if (user == null)
+            {
+                throw new ArgumentException("User does not exists.");
+
+            }
+            CartItem? item = user.ShoppingCart?.CartItems
+                .FirstOrDefault(ci => ci.Id == productId);
+            if (item == null)
+            {
+                throw new ArgumentException("Product does not exists.");
+            }
+
+            item.Quantity--;
+
+            if (item.Quantity < 1)
+            {
+                this.dbContext.CartItems.Remove(item);               
+            }
+
+            await this.dbContext.SaveChangesAsync();
         }
     }
 }

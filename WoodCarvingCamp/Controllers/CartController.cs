@@ -27,7 +27,7 @@ namespace WoodCarvingCamp.Web.Controllers
             var userId = this.User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
             try
             {
-                await cartService.AddProductToCart(id, userId);
+                await this.cartService.AddProductToCart(id, userId);
 
             }
             catch (Exception)
@@ -37,5 +37,21 @@ namespace WoodCarvingCamp.Web.Controllers
 
             return RedirectToAction("Index", "Cart");
         }
+
+        public async Task<IActionResult> Remove(int id)
+        {
+            var userId = this.User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
+
+            try
+            {
+                await this.cartService.RemoveItemFromCart(id, userId);
+            }
+            catch (Exception)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            return RedirectToAction("Index", "Cart");
+        }
+
     }
 }
