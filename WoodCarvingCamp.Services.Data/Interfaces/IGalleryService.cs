@@ -10,5 +10,8 @@ namespace WoodCarvingCamp.Services.Data.Interfaces
     public interface IGalleryService
     {
         Task AddPhotoAsync(GalleryPhotoFormModel model);
+        Task<IEnumerable<GalleryPhotoViewModel>> AllPhotos();
+        Task<GalleryPhotoViewModel> GetDetailsByIdAsync(string id);
+        Task<bool> ExistsByIdAsync(string id);
     }
 }

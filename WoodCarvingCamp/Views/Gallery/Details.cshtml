@@ -1,0 +1,36 @@
+﻿@model GalleryPhotoViewModel
+
+
+<div class="container" style="display:inline">
+    <div class="row">
+        <div class="col-4">
+            <img class="card-img-top" style="width: 20rem;"
+                 src="@Model.ImageUrl">
+        </div>
+        <div class="card col-8 border-0">
+                  
+            <p>@Model.Description</p>
+                          
+            <p></p>
+            <div class="form-control">
+                <label asp-for="Description" class="form-label">Add Comment</label>
+			    <textarea asp-for="Description" class="form-control" rows="3" aria-required="true"></textarea>
+            </div>
+            <div>
+                @if (Model.Comments.Any())
+                {
+                    @foreach (var comment in Model.Comments)
+                    {
+                        <p>@comment.Description</p>
+                        <br />
+                    }
+                    
+                }
+                else
+                {
+                    <p>No comments yet!</p>
+                }
+            </div>
+        </div>
+    </div>
+</div>

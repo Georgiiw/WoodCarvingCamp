@@ -21,7 +21,7 @@ namespace WoodCarvingCamp.Web.Controllers
             var shoppingCart = await this.cartService.GetShoppingCart(userId);
             return this.View(shoppingCart);
         }
-
+        [HttpGet]
         public async Task<IActionResult> Add([FromRoute] int id)
         {
             var userId = this.User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;

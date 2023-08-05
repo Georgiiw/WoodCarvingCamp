@@ -16,9 +16,16 @@ namespace WoodCarvingCamp.Web.Controllers
             this.galleryService = galleryService;
         }
         [AllowAnonymous]
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            if (!ModelState.IsValid)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            IEnumerable<GalleryPhotoViewModel> photos =
+                await this.galleryService.AllPhotos();
+
+            return View(photos);
         }
         [HttpGet]
         public IActionResult Add()
@@ -60,6 +67,30 @@ namespace WoodCarvingCamp.Web.Controllers
                 ModelState.AddModelError(string.Empty, "An error occurred.");
             }
             return RedirectToAction("Index", "Gallery");
+        }
+
+        [HttpGet]
+        [AllowAnonymous]
+        public async Task<IActionResult> Details(string id)
+        {
+            bool productExists = await galleryService
+               .ExistsByIdAsync(id);
+            if (!productExists)
+            {
+                return RedirectToAction("All", "Gallery");
+            }
+
+            try
+            {
+                GalleryPhotoViewModel viewModel = await galleryService
+                    .GetDetailsByIdAsync(id);
+
+                return View(viewModel);
+            }
+            catch (Exception)
+            {
+                return RedirectToAction("Index", "Home");
+            }
         }
     }
 }
