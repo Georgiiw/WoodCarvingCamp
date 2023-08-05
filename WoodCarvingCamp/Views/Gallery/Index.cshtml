@@ -1,0 +1,10 @@
+﻿<h1 class="text-center" style="color: #ffffff">Carving Projects Gallery</h1>
+
+@if (User.IsAdmin())
+{
+	<div>
+		<div class="d-grid gap-2 col-6 mx-auto">
+			<a asp-controller="Gallery" asp-action="Add" class="btn btn-primary">Add Photo</a>
+		</div>
+	</div>	
+}

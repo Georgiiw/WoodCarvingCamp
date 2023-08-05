@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ay6HUTFCjzZCao4FnPYAR+QJgzp88d9VV1qV+fk1yXs=",
+  "Hash": "B6ELwYvn0WdnMgg+qA9/tlTvXBVtixMNfNoefqXl3+g=",
   "Source": "WoodCarvingCamp.Web",
   "BasePath": "_content/WoodCarvingCamp.Web",
   "Mode": "Default",
@@ -1120,6 +1120,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\149797.jpg"
+    },
+    {
+      "Identity": "E:\\VS projects\\WoodCarvingCamp - CsharpWebCourse Project\\WoodCarvingCamp\\WoodCarvingCamp\\WoodCarvingCamp\\wwwroot\\images\\CourseImages\\Snake carving course.png",
+      "SourceId": "WoodCarvingCamp.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\VS projects\\WoodCarvingCamp - CsharpWebCourse Project\\WoodCarvingCamp\\WoodCarvingCamp\\WoodCarvingCamp\\wwwroot\\",
+      "BasePath": "_content/WoodCarvingCamp.Web",
+      "RelativePath": "images/CourseImages/Snake carving course.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\CourseImages\\Snake carving course.png"
+    },
+    {
+      "Identity": "E:\\VS projects\\WoodCarvingCamp - CsharpWebCourse Project\\WoodCarvingCamp\\WoodCarvingCamp\\WoodCarvingCamp\\wwwroot\\images\\GalleryImages\\flower carved in wood.jpeg",
+      "SourceId": "WoodCarvingCamp.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\VS projects\\WoodCarvingCamp - CsharpWebCourse Project\\WoodCarvingCamp\\WoodCarvingCamp\\WoodCarvingCamp\\wwwroot\\",
+      "BasePath": "_content/WoodCarvingCamp.Web",
+      "RelativePath": "images/GalleryImages/flower carved in wood.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\GalleryImages\\flower carved in wood.jpeg"
     },
     {
       "Identity": "E:\\VS projects\\WoodCarvingCamp - CsharpWebCourse Project\\WoodCarvingCamp\\WoodCarvingCamp\\WoodCarvingCamp\\wwwroot\\images\\holzfigur-g28d9eeb54_1920.jpg",

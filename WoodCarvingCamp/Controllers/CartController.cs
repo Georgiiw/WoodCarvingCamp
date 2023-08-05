@@ -8,7 +8,7 @@ namespace WoodCarvingCamp.Web.Controllers
     [Authorize]
     public class CartController : Controller
     {
-        private ICartService cartService { get; set; }
+        private readonly ICartService cartService;
 
         public CartController(ICartService cartService)
         {

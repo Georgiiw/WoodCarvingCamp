@@ -15,7 +15,7 @@ namespace WoodCarvingCamp.Web.ViewModels.CarvingCourse
         public string Description { get; set; } = null!;
         [Required]
         [StringLength(ImageUrlMaxLength)]
-        [Display(Name = "Image Link")]
+        [Display(Name = "Image Path")]
         public string ImageUrl { get; set; } = null!;
         [Required]
         public bool IsPaid { get; set; }      
