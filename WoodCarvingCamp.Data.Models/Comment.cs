@@ -8,6 +8,10 @@ namespace WoodCarvingCamp.Data.Models
 {
     public class Comment
     {
+        public Comment()
+        {
+            GalleryPhotos = new HashSet<GalleryPhoto>();
+        }
         [Key]
         public int Id { get; set; }
 
@@ -23,5 +27,7 @@ namespace WoodCarvingCamp.Data.Models
 
         [Required]
         public DateTime CreatedOn { get; set; }
+
+        public ICollection<GalleryPhoto> GalleryPhotos { get; set; }
     }
 }
