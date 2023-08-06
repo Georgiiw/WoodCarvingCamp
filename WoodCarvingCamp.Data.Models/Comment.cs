@@ -27,7 +27,8 @@ namespace WoodCarvingCamp.Data.Models
 
         [Required]
         public DateTime CreatedOn { get; set; }
-
+        [Required]
+        public int PhotoId { get; set; }
         public ICollection<GalleryPhoto> GalleryPhotos { get; set; }
     }
 }

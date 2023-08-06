@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WoodCarvingCamp.Data.Models;
+using WoodCarvingCamp.Web.ViewModels.UserComment;
 
 namespace WoodCarvingCamp.Web.ViewModels.GalleryPhoto
 {

@@ -1,20 +1,27 @@
 ﻿@model GalleryPhotoViewModel
 
 
-<div class="container" style="display:inline">
+<div class="container" >
     <div class="row">
         <div class="col-4">
             <img class="card-img-top" style="width: 20rem;"
                  src="@Model.ImageUrl">
         </div>
-        <div class="card col-8 border-0">
+        <div class="card col-10 border-0">
                   
             <p>@Model.Description</p>
-                          
-            <p></p>
             <div class="form-control">
-                <label asp-for="Description" class="form-label">Add Comment</label>
-			    <textarea asp-for="Description" class="form-control" rows="3" aria-required="true"></textarea>
+                <div>
+                    <form asp-controller="Comment" asp-action="Add" asp-route-id="@Model.Id" method="post">
+                       <div class="mb-3">
+			            <label asp-for="Description" >Add Comment</label>
+			            <textarea asp-for="Description" class="form-control" rows="3" aria-required="true"></textarea>
+			            <span asp-validation-for="Description" class="text-danger"></span>
+		                </div>
+                        <button type="submit" class="btn btn-primary" value="Add">Comment</button>
+                    </form>
+
+                </div>
             </div>
             <div>
                 @if (Model.Comments.Any())

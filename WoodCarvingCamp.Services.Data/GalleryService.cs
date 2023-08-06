@@ -61,13 +61,19 @@ namespace WoodCarvingCamp.Services.Data
             GalleryPhoto photo = await this.dbContext.GalleryPhotos
                 .FirstAsync(p => p.Id.ToString() == id);
 
-            return new GalleryPhotoViewModel
+            ICollection<Comment> comments = await this.dbContext.Comments
+                .Where(c => c.PhotoId == photo.Id).ToListAsync();
+
+            GalleryPhotoViewModel model = new GalleryPhotoViewModel
             {
                 Id = photo.Id,
                 Description = photo.Description,
                 ImageUrl = photo.ImageUrl,
-                Comments = photo.Comments
+                Comments = comments
             };
+
+            return model;
+           
         }
     }
 }

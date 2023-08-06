@@ -38,6 +38,7 @@ namespace WoodCarvingCamp
             builder.Services.AddScoped<ICategoryService, CategoryService>();
             builder.Services.AddScoped<ICartService, CartService>();
             builder.Services.AddScoped<IGalleryService, GalleryService>();
+            builder.Services.AddScoped<ICommentService, CommentService>();
 
             builder.Services.ConfigureApplicationCookie(cfg =>
             {
