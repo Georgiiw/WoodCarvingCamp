@@ -10,5 +10,6 @@ namespace WoodCarvingCamp.Services.Data.Interfaces
     public interface ICommentService
     {
         Task AddCommentToPhotoAsync(CommentFormModel model, string userId, int photoId);
+        Task DeleteComment(int photoId);
     }
 }

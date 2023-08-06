@@ -38,5 +38,18 @@ namespace WoodCarvingCamp.Web.Controllers
 
             return RedirectToAction("Index", "Gallery");
         }
+        public async Task<IActionResult> Delete([FromRoute] int id)
+        {           
+            try
+            {
+                await this.commentService.DeleteComment(id);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            return RedirectToAction("Index", "Gallery");
+        }
     }
 }

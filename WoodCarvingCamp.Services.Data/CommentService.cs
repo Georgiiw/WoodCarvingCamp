@@ -45,5 +45,16 @@ namespace WoodCarvingCamp.Services.Data
             await this.dbContext.AddAsync(comment);
             await this.dbContext.SaveChangesAsync();
         }
+
+        public async Task DeleteComment(int photoId)
+        {
+           
+
+            Comment? commentToDel = this.dbContext.Comments.FirstOrDefault(c => c.Id == photoId);
+
+            
+            this.dbContext.Remove(commentToDel);
+            await this.dbContext.SaveChangesAsync();
+        }
     }
 }

@@ -30,6 +30,12 @@
                     {
                         <p>@comment.Description</p>
                         <br />
+                        @if (User.UserId() == @comment.CreatorId.ToString() || User.IsAdmin())
+                        {
+                            <a asp-controller="Comment" asp-action="Delete" asp-route-id="
+                                    @comment.Id" class="btn btn-danger">Delete</a>
+                            
+                        }
                     }
                     
                 }
