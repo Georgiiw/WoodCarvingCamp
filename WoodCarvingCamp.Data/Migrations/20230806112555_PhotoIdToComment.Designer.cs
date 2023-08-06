@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WoodCarvingCamp.Data;
 
@@ -11,9 +12,10 @@ using WoodCarvingCamp.Data;
 namespace WoodCarvingCamp.Data.Migrations
 {
     [DbContext(typeof(WoodCarvingCampDbContext))]
-    partial class WoodCarvingCampDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230806112555_PhotoIdToComment")]
+    partial class PhotoIdToComment
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -272,7 +274,7 @@ namespace WoodCarvingCamp.Data.Migrations
                         {
                             Id = new Guid("f8a67313-d93c-417d-b6f1-3516c9344e0e"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "2254ea8d-c0bb-4f95-926f-613caee8d968",
+                            ConcurrencyStamp = "ce258bd0-4edd-4404-aa60-aafcbddd3962",
                             Email = "admin@woodcarvingcamp.bg",
                             EmailConfirmed = false,
                             FirstName = "Admin",
@@ -280,9 +282,9 @@ namespace WoodCarvingCamp.Data.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "admin@woodcarvingcamp.bg",
                             NormalizedUserName = "admin@woodcarvingcamp.bg",
-                            PasswordHash = "AQAAAAEAACcQAAAAEIRaqw8oN4LGf8VUAy5FpMQ93QWIREXQP//wb2hrk4SjagLRrdtrpvjZ9oj9iKg2Sw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEAS1ZkQ6LJBRXWmD3Iyn/rwfrudX6YV+dqh+CNkkOdnCl3t6/3Dajynt1fCxuGttHw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "3539617e-92f4-4365-b49e-dac6910e7645",
+                            SecurityStamp = "9cba314d-4196-4879-bfe2-0d54c0f3229f",
                             TwoFactorEnabled = false,
                             UserName = "admin@woodcarvingcamp.bg"
                         },
@@ -290,7 +292,7 @@ namespace WoodCarvingCamp.Data.Migrations
                         {
                             Id = new Guid("dfc6ee85-e1cd-45d5-82b8-f5bbba23d087"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "d363fb87-6d30-4576-a9f9-0c7a86ca8541",
+                            ConcurrencyStamp = "45342d0c-ee45-49a9-881d-b72c33b1991c",
                             Email = "stefcho@abv.bg",
                             EmailConfirmed = false,
                             FirstName = "Stefcho",
@@ -298,9 +300,9 @@ namespace WoodCarvingCamp.Data.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "stefcho@abv.bg",
                             NormalizedUserName = "stefcho@abv.bg",
-                            PasswordHash = "AQAAAAEAACcQAAAAED9PNOB1sKooyrb2jajplfRBuho5H8sCO//I0A2oPhv7u2sj60VPOMo8LaWicpuq1w==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEH3DEkYIk31DEwuA0m5bDobX7DG1fxiIzKz545DuxV/y5wTgb1bgOvW/fjjzK+MHBQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "71c4ec70-4a9d-4f8c-bae4-4510ef4cc9b9",
+                            SecurityStamp = "d9a48a55-2c8c-465e-aa74-f48e62703ae9",
                             TwoFactorEnabled = false,
                             UserName = "stefcho@abv.bg"
                         });
@@ -433,8 +435,9 @@ namespace WoodCarvingCamp.Data.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<int>("PhotoId")
-                        .HasColumnType("int");
+                    b.Property<string>("PhotoId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
