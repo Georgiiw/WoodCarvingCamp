@@ -1,6 +1,6 @@
 ﻿@model ShoppingCartViewModel
 
-
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 @{
 	decimal totalPrice = 0;
 }
@@ -30,6 +30,7 @@
 				}		
 		</table>
 	</div>
+	<hr style="border-top: 2px solid antiquewhite;">
 	<div class="total-price">
 		<p>Total Price: <strong>$@totalPrice</strong></p>	
 	</div>	
@@ -38,7 +39,9 @@
 }
 else 
 {
-	<p>Your cart is empty! Continue shopping:</p>
+	<div class="total-price">
+		<p>Your cart is empty! Continue shopping:</p>	
+	</div>
 	<a asp-controller="Shop" asp-action="All" class="btn btn-primary">Go to products</a>
 }
 

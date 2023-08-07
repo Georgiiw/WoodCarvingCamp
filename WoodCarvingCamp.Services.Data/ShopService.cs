@@ -115,6 +115,7 @@ namespace WoodCarvingCamp.Services.Data
             return new ProductDetailsViewModel
             {
                 Id = product.Id.ToString(),
+                Name = product.Name,
                 ImageUrl = product.ImageUrl,
                 Price = product.Price,
                 Description = product.Description,
