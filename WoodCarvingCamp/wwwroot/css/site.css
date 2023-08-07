@@ -315,5 +315,32 @@ footer {
     object-fit: cover;
     border-radius: 20px;
 }
+/*---Product_Details---*/
+#cart-page{
+    margin: 80px auto;
+}
+table{
+    width: 100%;
+    border-collapse: collapse
+}
+th {
+    padding: 10px;
+    color: black;
+    background: antiquewhite;
+    
+}
+td{
+    padding: 10px 5px;
+    color: #ffffff;
+    font-size: large;
+}
+.total-price{
+    display: flex;
+    padding: 10px;
+}
+.total-price p {
+    color: #ffffff;
+    font-size: large;
+}
 
 

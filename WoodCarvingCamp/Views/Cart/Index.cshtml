@@ -1,27 +1,40 @@
 ﻿@model ShoppingCartViewModel
 
 
-<h1 class="text-align-center">Cart</h1>
 @{
 	decimal totalPrice = 0;
 }
 @if (Model != null && Model.CartItems.Count() > 0)
 {
-	@foreach (var item in Model.CartItems)
-	{		
-		decimal price = item.Product.Price * item.Quantity;
-		totalPrice += price;
-
-		<ul class="list-group list-group-horizontal">
-		  <li class="list-group-item">Product Name: @item.Product.Name</li>		  
-		  <li class="list-group-item" id="priceId">Price: $@price</li>		  
-		  <li class="list-group-item" id="priceId">Quantity: @item.Quantity</li>		  
-		</ul>
-		<a asp-controller="Cart" asp-action="Remove" asp-route-id="@item.Id" class="btn btn-primary">Remove Item</a>
-	}
-	<br />
-	<li class="list-group-item" id="priceId">Total Price: $@totalPrice</li>	
-	<a asp-controller="Shop" asp-action="All" class="btn btn-primary">Continue shopping!</a>
+	<div class="small-container" id="cart-page">
+		<table>
+			<tr>
+				<th>Product</th>
+				<th>Quantity</th>
+				<th>Price</th>
+			</tr>		
+				@foreach (var item in Model.CartItems)
+				{		
+					decimal price = item.Product.Price * item.Quantity;
+					totalPrice += price;
+					<tr>
+						<td>@item.Product.Name</td>		  
+						<td>
+							@item.Quantity
+							<a asp-controller="Cart" asp-action="Remove" asp-route-id="@item.Id" class="btn" style="color: #fff">-</a>
+						</td>		  
+						<td>$@price</td>		  
+						<td>
+						</td>
+					</tr>
+				}		
+		</table>
+	</div>
+	<div class="total-price">
+		<p>Total Price: <strong>$@totalPrice</strong></p>	
+	</div>	
+	
+	<a asp-controller="Shop" asp-action="All" class="btn btn-outline-primary">Continue shopping!</a>
 }
 else 
 {
