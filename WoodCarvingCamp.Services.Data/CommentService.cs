@@ -54,10 +54,10 @@ namespace WoodCarvingCamp.Services.Data
             await this.dbContext.SaveChangesAsync();
         }
 
-        public async Task DeleteComment(int photoId)
+        public async Task DeleteComment(int commentId)
         {
            
-            Comment? commentToDel = this.dbContext.Comments.FirstOrDefault(c => c.Id == photoId);
+            Comment? commentToDel = this.dbContext.Comments.FirstOrDefault(c => c.Id == commentId);
             if (commentToDel == null)
             {
                 throw new ArgumentException("No comment to delete!");
