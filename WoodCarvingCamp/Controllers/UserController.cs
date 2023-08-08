@@ -86,5 +86,11 @@ namespace WoodCarvingCamp.Web.Controllers
 
             return this.Redirect(model.ReturnUrl ?? "/Home/Index");
         }
+        public async Task<IActionResult> Logout()
+        {
+            await this.signInManager.SignOutAsync();
+
+            return this.RedirectToAction("Index", "Home");
+        }
     }
 }
