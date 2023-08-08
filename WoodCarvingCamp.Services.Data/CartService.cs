@@ -20,8 +20,7 @@ namespace WoodCarvingCamp.Services.Data
         private readonly WoodCarvingCampDbContext dbContext;
        
 
-        public CartService(WoodCarvingCampDbContext dbContext, UserManager<ApplicationUser> userManager,
-            IHttpContextAccessor contextAccessor)
+        public CartService(WoodCarvingCampDbContext dbContext)
         {
             this.dbContext = dbContext;          
         }
@@ -31,6 +30,10 @@ namespace WoodCarvingCamp.Services.Data
             Product? product = await this.dbContext.Products
                 .FirstOrDefaultAsync(p => p.Id == productId);
 
+            if (product == null)
+            {
+                throw new ArgumentException("Product does not exists.");
+            }
 
             CartItem cartItem = new CartItem()
             {
@@ -51,11 +54,6 @@ namespace WoodCarvingCamp.Services.Data
                .ThenInclude(c => c.CartItems)
                .ThenInclude(p => p.Product)
                .FirstOrDefaultAsync();
-
-            if (product == null)
-            {
-                throw new ArgumentException("Product does not exists.");
-            }
 
             if (user == null)
             {

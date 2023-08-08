@@ -26,11 +26,19 @@ namespace WoodCarvingCamp.Services.Data
                 .Where(p => p.Id == photoId)
                 .FirstOrDefaultAsync();
 
+            if (photo == null)
+            {
+                throw new ArgumentException("No photo to comment!");
+            }
+
             ApplicationUser? user = await this.dbContext
               .Users
               .Where(u => u.Id.ToString() == userId)
               .FirstOrDefaultAsync();
-
+            if (user == null)
+            {
+                throw new ArgumentException("User does not exist!");
+            }
             Comment comment = new Comment
             {
                 CreatorId = user.Id,
@@ -49,9 +57,11 @@ namespace WoodCarvingCamp.Services.Data
         public async Task DeleteComment(int photoId)
         {
            
-
             Comment? commentToDel = this.dbContext.Comments.FirstOrDefault(c => c.Id == photoId);
-
+            if (commentToDel == null)
+            {
+                throw new ArgumentException("No comment to delete!");
+            }
             
             this.dbContext.Remove(commentToDel);
             await this.dbContext.SaveChangesAsync();

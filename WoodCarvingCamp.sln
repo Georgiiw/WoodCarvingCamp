@@ -25,7 +25,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WoodCarvingCamp.Web.Infrast
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WoodCarvingCamp.Services.Data.Models", "WoodCarvingCamp.Services.Data.Models\WoodCarvingCamp.Services.Data.Models.csproj", "{F3A49C2E-91CF-4574-B5D4-B9219B66C28A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WoodCarvingCamp.Common", "WoodCarvingCamp.Common\WoodCarvingCamp.Common.csproj", "{C3032627-494E-45C6-BF7D-2BBC56214C0E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WoodCarvingCamp.Common", "WoodCarvingCamp.Common\WoodCarvingCamp.Common.csproj", "{C3032627-494E-45C6-BF7D-2BBC56214C0E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{D807BF27-ED20-44D3-839F-BA6D48AE3331}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WoodCarvingCamp.Tests", "WoodCarvingCamp.Tests\WoodCarvingCamp.Tests.csproj", "{8CB22F57-CBB3-49C4-8D05-9A2081110E2B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +73,10 @@ Global
 		{C3032627-494E-45C6-BF7D-2BBC56214C0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3032627-494E-45C6-BF7D-2BBC56214C0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C3032627-494E-45C6-BF7D-2BBC56214C0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CB22F57-CBB3-49C4-8D05-9A2081110E2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CB22F57-CBB3-49C4-8D05-9A2081110E2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CB22F57-CBB3-49C4-8D05-9A2081110E2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CB22F57-CBB3-49C4-8D05-9A2081110E2B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -82,6 +90,7 @@ Global
 		{70097481-7195-498D-91B9-92CB9B989605} = {163B207E-EFAE-4D7E-9EFE-C2BB1342E680}
 		{BF17E356-3129-45C4-B133-15BADEA13202} = {FAEB2F12-AB87-47B4-B637-DE4DB166FF6C}
 		{F3A49C2E-91CF-4574-B5D4-B9219B66C28A} = {163B207E-EFAE-4D7E-9EFE-C2BB1342E680}
+		{8CB22F57-CBB3-49C4-8D05-9A2081110E2B} = {D807BF27-ED20-44D3-839F-BA6D48AE3331}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E3C07686-AE1A-4214-A310-2F6BF618171A}
