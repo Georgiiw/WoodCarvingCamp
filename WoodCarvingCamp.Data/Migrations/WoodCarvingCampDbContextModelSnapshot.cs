@@ -34,7 +34,7 @@ namespace WoodCarvingCamp.Data.Migrations
 
                     b.HasIndex("ShoppingCartId");
 
-                    b.ToTable("CartItemShoppingCart");
+                    b.ToTable("CartItemShoppingCart", (string)null);
                 });
 
             modelBuilder.Entity("CommentGalleryPhoto", b =>
@@ -49,7 +49,7 @@ namespace WoodCarvingCamp.Data.Migrations
 
                     b.HasIndex("GalleryPhotosId");
 
-                    b.ToTable("CommentGalleryPhoto");
+                    b.ToTable("CommentGalleryPhoto", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole<System.Guid>", b =>
@@ -272,7 +272,7 @@ namespace WoodCarvingCamp.Data.Migrations
                         {
                             Id = new Guid("f8a67313-d93c-417d-b6f1-3516c9344e0e"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "2254ea8d-c0bb-4f95-926f-613caee8d968",
+                            ConcurrencyStamp = "534f21d4-5665-4e1f-835b-b0029ac55a8d",
                             Email = "admin@woodcarvingcamp.bg",
                             EmailConfirmed = false,
                             FirstName = "Admin",
@@ -280,9 +280,9 @@ namespace WoodCarvingCamp.Data.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "admin@woodcarvingcamp.bg",
                             NormalizedUserName = "admin@woodcarvingcamp.bg",
-                            PasswordHash = "AQAAAAEAACcQAAAAEIRaqw8oN4LGf8VUAy5FpMQ93QWIREXQP//wb2hrk4SjagLRrdtrpvjZ9oj9iKg2Sw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEL1nTYQOoMNm6ROHIB2DflJ/Wc0ZmpaplEVJ+SDYnETtYmJpVQGPJgKz/CjF2O0Jtg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "3539617e-92f4-4365-b49e-dac6910e7645",
+                            SecurityStamp = "fae8e72a-be35-4e51-9f14-1cd67c75807f",
                             TwoFactorEnabled = false,
                             UserName = "admin@woodcarvingcamp.bg"
                         },
@@ -290,7 +290,7 @@ namespace WoodCarvingCamp.Data.Migrations
                         {
                             Id = new Guid("dfc6ee85-e1cd-45d5-82b8-f5bbba23d087"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "d363fb87-6d30-4576-a9f9-0c7a86ca8541",
+                            ConcurrencyStamp = "9048b446-567a-43c8-8e53-13e4e3c22416",
                             Email = "stefcho@abv.bg",
                             EmailConfirmed = false,
                             FirstName = "Stefcho",
@@ -298,9 +298,9 @@ namespace WoodCarvingCamp.Data.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "stefcho@abv.bg",
                             NormalizedUserName = "stefcho@abv.bg",
-                            PasswordHash = "AQAAAAEAACcQAAAAED9PNOB1sKooyrb2jajplfRBuho5H8sCO//I0A2oPhv7u2sj60VPOMo8LaWicpuq1w==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEM6bL43c56df6qqvfgYztkRu/I6civYYFR7mD/GNIW8xdNCSsfSgWhUIAtocXF+9/w==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "71c4ec70-4a9d-4f8c-bae4-4510ef4cc9b9",
+                            SecurityStamp = "7e2fc50a-33c0-409b-a3c8-f71afcb19246",
                             TwoFactorEnabled = false,
                             UserName = "stefcho@abv.bg"
                         });
@@ -324,7 +324,7 @@ namespace WoodCarvingCamp.Data.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("CartItems");
+                    b.ToTable("CartItems", (string)null);
                 });
 
             modelBuilder.Entity("WoodCarvingCamp.Data.Models.CarvingCourse", b =>
@@ -366,7 +366,7 @@ namespace WoodCarvingCamp.Data.Migrations
 
                     b.HasIndex("ApplicationUserId");
 
-                    b.ToTable("CarvingCourses");
+                    b.ToTable("CarvingCourses", (string)null);
                 });
 
             modelBuilder.Entity("WoodCarvingCamp.Data.Models.Category", b =>
@@ -384,7 +384,7 @@ namespace WoodCarvingCamp.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Categories", (string)null);
 
                     b.HasData(
                         new
@@ -440,7 +440,7 @@ namespace WoodCarvingCamp.Data.Migrations
 
                     b.HasIndex("CreatorId");
 
-                    b.ToTable("Comments");
+                    b.ToTable("Comments", (string)null);
                 });
 
             modelBuilder.Entity("WoodCarvingCamp.Data.Models.Discount", b =>
@@ -472,7 +472,7 @@ namespace WoodCarvingCamp.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Discounts");
+                    b.ToTable("Discounts", (string)null);
                 });
 
             modelBuilder.Entity("WoodCarvingCamp.Data.Models.GalleryPhoto", b =>
@@ -498,7 +498,30 @@ namespace WoodCarvingCamp.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("GalleryPhotos");
+                    b.ToTable("GalleryPhotos", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedOn = new DateTime(2023, 8, 8, 21, 4, 5, 497, DateTimeKind.Local).AddTicks(7369),
+                            Description = "Beautiful flower carved in wood.",
+                            ImageUrl = "/images/GalleryImages/flower carved in wood.jpeg"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedOn = new DateTime(2023, 8, 8, 21, 4, 5, 497, DateTimeKind.Local).AddTicks(7426),
+                            Description = "Jesus Face - Just Extraordinary.",
+                            ImageUrl = "/images/GalleryImages/Jesus Face.jpeg"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreatedOn = new DateTime(2023, 8, 8, 21, 4, 5, 497, DateTimeKind.Local).AddTicks(7430),
+                            Description = "Owl - Amazing work.",
+                            ImageUrl = "/images/GalleryImages/Owl.jpg"
+                        });
                 });
 
             modelBuilder.Entity("WoodCarvingCamp.Data.Models.Product", b =>
@@ -540,7 +563,108 @@ namespace WoodCarvingCamp.Data.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Products");
+                    b.ToTable("Products", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CategoryId = 1,
+                            CreatedOn = new DateTime(2023, 8, 8, 21, 4, 5, 497, DateTimeKind.Local).AddTicks(7660),
+                            Description = "Woodworking chisels range from small hand tools for tiny details, to large chisels used to remove big sections of wood, in 'roughing out' the shape of a pattern or design.",
+                            ImageUrl = "/Images/ShopImages/Chisel one.jpg",
+                            Name = "5 Piece - Set Starter - Carving Chisels",
+                            Price = 49.99m,
+                            UpdatedOn = new DateTime(2023, 8, 8, 21, 4, 5, 497, DateTimeKind.Local).AddTicks(7665)
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CategoryId = 2,
+                            CreatedOn = new DateTime(2023, 8, 8, 21, 4, 5, 497, DateTimeKind.Local).AddTicks(7674),
+                            Description = "Hook Carving Knife good for carcing spoons or making special details on your special projects",
+                            ImageUrl = "/Images/ShopImages/Knife one.jpg",
+                            Name = "Hook Carving Knife",
+                            Price = 15.99m,
+                            UpdatedOn = new DateTime(2023, 8, 8, 21, 4, 5, 497, DateTimeKind.Local).AddTicks(7676)
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CategoryId = 2,
+                            CreatedOn = new DateTime(2023, 8, 8, 21, 4, 5, 497, DateTimeKind.Local).AddTicks(7679),
+                            Description = "Set of four knife made to help you carve your perfect project!",
+                            ImageUrl = "/Images/ShopImages/Knife two.jpg",
+                            Name = "Hook Carving Knifes Set",
+                            Price = 45.99m,
+                            UpdatedOn = new DateTime(2023, 8, 8, 21, 4, 5, 497, DateTimeKind.Local).AddTicks(7681)
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CategoryId = 2,
+                            CreatedOn = new DateTime(2023, 8, 8, 21, 4, 5, 497, DateTimeKind.Local).AddTicks(7685),
+                            Description = "The one knife you need the most - the basic carving knife to start your journey!",
+                            ImageUrl = "/Images/ShopImages/Knife three.jpg",
+                            Name = "Carving Knife",
+                            Price = 9.99m,
+                            UpdatedOn = new DateTime(2023, 8, 8, 21, 4, 5, 497, DateTimeKind.Local).AddTicks(7687)
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CategoryId = 1,
+                            CreatedOn = new DateTime(2023, 8, 8, 21, 4, 5, 497, DateTimeKind.Local).AddTicks(7693),
+                            Description = "Set of four knife made to help you carve your perfect project!",
+                            ImageUrl = "/Images/ShopImages/Chisel two.jpg",
+                            Name = "Small Carving Chisel For Wood Carving",
+                            Price = 9.99m,
+                            UpdatedOn = new DateTime(2023, 8, 8, 21, 4, 5, 497, DateTimeKind.Local).AddTicks(7695)
+                        },
+                        new
+                        {
+                            Id = 6,
+                            CategoryId = 3,
+                            CreatedOn = new DateTime(2023, 8, 8, 21, 4, 5, 497, DateTimeKind.Local).AddTicks(7698),
+                            Description = "Really good gloves to avoid accidentally cuts and injuries!",
+                            ImageUrl = "/Images/ShopImages/Gloves one.jpg",
+                            Name = "Level 6a Resistant Cut Gloves",
+                            Price = 20.00m,
+                            UpdatedOn = new DateTime(2023, 8, 8, 21, 4, 5, 497, DateTimeKind.Local).AddTicks(7701)
+                        },
+                        new
+                        {
+                            Id = 7,
+                            CategoryId = 3,
+                            CreatedOn = new DateTime(2023, 8, 8, 21, 4, 5, 497, DateTimeKind.Local).AddTicks(7704),
+                            Description = "Really good gloves to avoid accidentally cuts and injuries!",
+                            ImageUrl = "/Images/ShopImages/Gloves two.jpg",
+                            Name = "Wood Carving Gloves",
+                            Price = 15.49m,
+                            UpdatedOn = new DateTime(2023, 8, 8, 21, 4, 5, 497, DateTimeKind.Local).AddTicks(7706)
+                        },
+                        new
+                        {
+                            Id = 8,
+                            CategoryId = 5,
+                            CreatedOn = new DateTime(2023, 8, 8, 21, 4, 5, 497, DateTimeKind.Local).AddTicks(7709),
+                            Description = "Tools storage to store your knifes, chisels and other accessories!",
+                            ImageUrl = "/Images/ShopImages/Gloves two.jpg",
+                            Name = "Tools Storage.jpg",
+                            Price = 30.49m,
+                            UpdatedOn = new DateTime(2023, 8, 8, 21, 4, 5, 497, DateTimeKind.Local).AddTicks(7711)
+                        },
+                        new
+                        {
+                            Id = 9,
+                            CategoryId = 4,
+                            CreatedOn = new DateTime(2023, 8, 8, 21, 4, 5, 497, DateTimeKind.Local).AddTicks(7722),
+                            Description = "Kepp your knifes sharp to make shure you have the perfect expirince while doing your projects!",
+                            ImageUrl = "/Images/ShopImages/Sharpening stone.jpg",
+                            Name = "Sharpening stone",
+                            Price = 30.49m,
+                            UpdatedOn = new DateTime(2023, 8, 8, 21, 4, 5, 497, DateTimeKind.Local).AddTicks(7725)
+                        });
                 });
 
             modelBuilder.Entity("WoodCarvingCamp.Data.Models.ShoppingCart", b =>
@@ -559,7 +683,7 @@ namespace WoodCarvingCamp.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("ShoppingCarts");
+                    b.ToTable("ShoppingCarts", (string)null);
                 });
 
             modelBuilder.Entity("CartItemShoppingCart", b =>

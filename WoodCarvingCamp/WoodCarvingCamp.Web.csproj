@@ -24,9 +24,4 @@
     <ProjectReference Include="..\WoodCarvingCamp.Web.ViewModels\WoodCarvingCamp.Web.ViewModels.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="wwwroot\images\GalleryImages\" />
-    <Folder Include="wwwroot\images\ShopImages\" />
-  </ItemGroup>
-
 </Project>
