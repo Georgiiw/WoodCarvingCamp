@@ -21,6 +21,7 @@ namespace WoodCarvingCamp.Data.Configurations
             photo = new GalleryPhoto()
             {
                 Id = 1,
+                Title = "Beautiful flower carved in wood.",
                 Description = "Beautiful flower carved in wood.",
                 ImageUrl = "/images/GalleryImages/flower carved in wood.jpeg",
                 CreatedOn = DateTime.Now,
@@ -30,6 +31,7 @@ namespace WoodCarvingCamp.Data.Configurations
             photo = new GalleryPhoto()
             {
                 Id = 2,
+                Title = "Jesus Face - Just Extraordinary.",
                 Description = "Jesus Face - Just Extraordinary.",
                 ImageUrl = "/images/GalleryImages/Jesus Face.jpeg",
                 CreatedOn = DateTime.Now,
@@ -39,6 +41,7 @@ namespace WoodCarvingCamp.Data.Configurations
             photo = new GalleryPhoto()
             {
                 Id = 3,
+                Title = "Owl - Amazing work.",
                 Description = "Owl - Amazing work.",
                 ImageUrl = "/images/GalleryImages/Owl.jpg",
                 CreatedOn = DateTime.Now,

@@ -25,6 +25,8 @@
         }
         public static class GalleryPhotoValidations
         {
+            public const int TitleMinLength = 2;
+            public const int TitleMaxLength = 40;
             public const int DescriptionMinLength = 10;
             public const int DescriptionMaxLength = 150;
             public const int ImageUrlMaxLength = 2048;

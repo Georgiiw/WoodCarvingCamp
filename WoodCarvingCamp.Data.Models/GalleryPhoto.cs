@@ -13,7 +13,9 @@ namespace WoodCarvingCamp.Data.Models
 
         [Key]
         public int Id { get; set; }
-
+        [Required]
+        [MaxLength(TitleMaxLength)]
+        public string Title { get; set; } = null!;
         [Required]
         [MaxLength(DescriptionMaxLength)]
         public string Description { get; set; } = null!;
