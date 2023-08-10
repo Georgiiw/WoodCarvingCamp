@@ -92,5 +92,22 @@ namespace WoodCarvingCamp.Web.Controllers
                 return RedirectToAction("Index", "Home");
             }
         }
+        public async Task<IActionResult> Delete(string id)
+        {
+            if (User.IsAdmin() == false)
+            {
+                return Unauthorized();
+            }
+            try
+            {
+                await this.galleryService.DeletePhoto(id);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            return RedirectToAction("Index", "Gallery");
+        }
     }
 }

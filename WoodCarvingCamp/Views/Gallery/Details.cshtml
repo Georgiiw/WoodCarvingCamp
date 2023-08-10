@@ -5,6 +5,8 @@
     <div class="row">
         <div class="col-4">
             <img class="d-block w-100" src="@Model.ImageUrl">
+            <a asp-controller="Gallery" asp-action="Delete" asp-route-id="@Model.Id"
+							   class="btn btn-danger">Delete</a>
         </div>
         <div class="card col-10 border-0">
                   

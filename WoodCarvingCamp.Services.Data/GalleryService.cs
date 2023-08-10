@@ -50,6 +50,15 @@ namespace WoodCarvingCamp.Services.Data
             return photos;
         }
 
+        public async Task DeletePhoto(string photoId)
+        {
+            var photoToDel = await this.dbContext.GalleryPhotos
+                .FirstAsync(p => p.Id.ToString() == photoId);
+
+            this.dbContext.Remove(photoToDel);
+            await this.dbContext.SaveChangesAsync();
+        }
+
         public async Task<bool> ExistsByIdAsync(string id)
         {
             bool result = await dbContext.GalleryPhotos

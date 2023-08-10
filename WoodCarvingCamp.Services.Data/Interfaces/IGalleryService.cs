@@ -15,6 +15,7 @@ namespace WoodCarvingCamp.Services.Data.Interfaces
         Task<GalleryPhotoViewModel> GetDetailsByIdAsync(string id);
         Task<bool> ExistsByIdAsync(string id);
 		Task<ICollection<CommentViewModel>> GetCommentsByPhotoId(string photoId);
+        Task DeletePhoto(string photoId);
 
 	}
 }

@@ -8,7 +8,11 @@
 
 <div class="row">
 	<form asp-action="Add" method="post">
-	
+		<div class="mb-3">
+			<label asp-for="Title" class="form-label">Title</label>
+			<input asp-for="Title" class="form-control" aria-required="true">
+			<span asp-validation-for="Title" class="text-danger"></span>
+		</div>
 		<div class="mb-3">
 			<label asp-for="ImageUrl" class="form-label">Image Path</label>
 			<input asp-for="ImageUrl" class="form-control" aria-required="true">
