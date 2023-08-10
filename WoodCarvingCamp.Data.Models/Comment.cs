@@ -24,6 +24,8 @@ namespace WoodCarvingCamp.Data.Models
 
         [Required]
         public virtual ApplicationUser Creator { get; set; } = null!;
+		[Required]
+        public string CreatorName { get; set; } = null!;
 
         [Required]
         public DateTime CreatedOn { get; set; }
