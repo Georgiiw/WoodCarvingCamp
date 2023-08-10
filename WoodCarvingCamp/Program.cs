@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Mvc;
 using WoodCarvingCamp.Web.Infrastructure.ModelBinders;
 using WoodCarvingCamp.Web.Infrastructure.Extensions;
 using static WoodCarvingCamp.Common.AdminUserValidations.AdminValidations;
+using Stripe;
+using WoodCarvingCamp.Services.Data.Models.Payments;
 
 namespace WoodCarvingCamp
 {
@@ -39,6 +41,7 @@ namespace WoodCarvingCamp
             builder.Services.AddScoped<ICartService, CartService>();
             builder.Services.AddScoped<IGalleryService, GalleryService>();
             builder.Services.AddScoped<ICommentService, CommentService>();
+            builder.Services.AddScoped<IOrderService, OrderService>();
 
             builder.Services.ConfigureApplicationCookie(cfg =>
             {
@@ -52,7 +55,7 @@ namespace WoodCarvingCamp
                     options.ModelBinderProviders.Insert(0, new DecimalModelBinderProvider());
                     options.Filters.Add<AutoValidateAntiforgeryTokenAttribute>();
                 });
-         
+            
             WebApplication app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -71,6 +74,7 @@ namespace WoodCarvingCamp
             app.UseStaticFiles();
 
             app.UseRouting();
+            StripeConfiguration.ApiKey = StripeSettings.SecretKey;
 
             app.UseAuthentication();
             app.UseAuthorization();

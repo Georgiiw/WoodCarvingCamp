@@ -14,5 +14,7 @@ namespace WoodCarvingCamp.Web.ViewModels.Cart
             this.CartItems = new List<ShoppingCartProductViewModel>();
         }      
         public ICollection<ShoppingCartProductViewModel> CartItems { get; set; }
+
+        public decimal TotalPrice { get; set; }
     }
 }

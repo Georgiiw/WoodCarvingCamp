@@ -54,5 +54,11 @@
             public const int PasswordMaxLength = 100;
 
         }
+        public static class OrderValidations
+        {
+            public const int PaymentStatusMaxLength = 50;
+            public const int OrderStatusMaxLength = 50;
+            public const int TransactionIdMaxLength = 50;
+        }
     }
 }

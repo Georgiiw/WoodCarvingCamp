@@ -1,0 +1,45 @@
+﻿﻿@using Microsoft.Extensions.Options
+@using WoodCarvingCamp.Services.Data.Models.Payments
+@model ShoppingCartViewModel
+@inject IOptions<StripeSettings> Stripe
+
+
+<form method="post">
+	<h4 class="d-flex justify-content-between align-items-center mb-3">
+		<span style="color: #ffffff">Order Summary:</span>
+	</h4>
+	<ul class="list-group mb-3">
+		@foreach (var item in Model.CartItems)
+		{
+			<li class="list-group-item d-flex justify-content-between">
+				<div>
+					<h6 class="my-0">@item.Product.Name</h6>
+				</div>
+				<div>
+					<h6 class="my-0">@item.Quantity</h6>
+				</div>
+				<span class="text-muted">$@item.Product.Price </span>
+				<span class="text-muted">$@Model.TotalPrice</span>
+			</li>
+		}
+	</ul>
+	<div class="col-12 col-md-4">
+		@{
+			var StripeTotalPrice = Model.TotalPrice * 100;
+		}
+		<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+				data-key="@Stripe.Value.PublishableKey"
+				data-amount="@StripeTotalPrice"
+				data-name="Wood Carving Camp"
+				data-label="Place Order"
+				data-description="The tools you need!"
+				data-locale="auto"
+				data-allow-remember-me="true"
+				data-image="https://stripe.com/img/documentation/checkout/marketplace.png">
+		</script>
+		<script>
+			document.getElementsByClassName("stripe-button-el")[0].style.display = 'none';
+		</script>
+		<button type="submit" value="Place Order" class="btn btn-success form-control">Place Order</button>
+	</div>
+</form>

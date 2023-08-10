@@ -15,8 +15,7 @@
 			</tr>		
 				@foreach (var item in Model.CartItems)
 				{		
-					decimal price = item.Product.Price * item.Quantity;
-					totalPrice += price;
+					decimal price = item.Product.Price * item.Quantity;				
 					<tr>
 						<td>@item.Product.Name</td>		  
 						<td>
@@ -32,10 +31,12 @@
 	</div>
 	<hr style="border-top: 2px solid antiquewhite;">
 	<div class="total-price">
-		<p>Total Price: <strong>$@totalPrice</strong></p>	
+		<p>Total Price: <strong>$@Model.TotalPrice</strong></p>	
 	</div>	
 	
+	<a asp-controller="Cart" asp-action="Summary" class="btn btn-outline-primary">Summary</a>
 	<a asp-controller="Shop" asp-action="All" class="btn btn-outline-primary">Continue shopping!</a>
+
 }
 else 
 {

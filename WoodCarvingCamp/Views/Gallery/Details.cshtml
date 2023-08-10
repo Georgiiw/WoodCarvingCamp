@@ -15,7 +15,7 @@
                     <form asp-controller="Comment" asp-action="Add" asp-route-id="@Model.Id" method="post">
                        <div class="mb-3">
 			            <label asp-for="Description" >Add Comment</label>
-			            <textarea class="form-control" rows="3" aria-required="true"></textarea>
+			            <textarea asp-for="Description" class="form-control" rows="3" aria-required="true"></textarea>
 			            
 		                </div>
                         <button type="submit" class="btn btn-primary" value="Add">Comment</button>

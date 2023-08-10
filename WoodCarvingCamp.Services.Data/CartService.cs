@@ -83,12 +83,14 @@ namespace WoodCarvingCamp.Services.Data
                 user.ShoppingCart.CartItems.Add(cartItem);
 
             }
+
             await this.dbContext.SaveChangesAsync();
 
         }
 
         public async Task<ShoppingCartViewModel> GetShoppingCart(string userId)
         {
+            decimal totalPrice = 0;
             var user = await this.dbContext
                 .Users
                 .Where(u => u.Id.ToString() == userId)
@@ -101,7 +103,10 @@ namespace WoodCarvingCamp.Services.Data
             {
                  return null;
             }
-            
+            foreach (var item in user.ShoppingCart.CartItems)
+            {
+                totalPrice += item.Product.Price;
+            }
             var cartItems = user.ShoppingCart?.CartItems
                 .Select(p => new ShoppingCartProductViewModel
                 {
@@ -113,11 +118,32 @@ namespace WoodCarvingCamp.Services.Data
 
             var cart = new ShoppingCartViewModel()
             {
-                CartItems = cartItems
+                CartItems = cartItems,
+                TotalPrice = totalPrice
+                
             };
 
             return cart;
 
+        }
+
+        public async Task RemoveAllItems(string userId)
+        {
+            ApplicationUser? user = await this.dbContext
+              .Users
+              .Where(u => u.Id.ToString() == userId)
+              .Include(sc => sc.ShoppingCart)
+              .ThenInclude(c => c.CartItems)
+              .ThenInclude(p => p.Product)
+              .FirstOrDefaultAsync();
+        
+            if (user == null)
+            {
+                throw new ArgumentException("User does not exists.");
+
+            }
+            user.ShoppingCart.CartItems.Clear();
+            await this.dbContext.SaveChangesAsync();
         }
 
         public async Task RemoveItemFromCart(int productId, string userId)

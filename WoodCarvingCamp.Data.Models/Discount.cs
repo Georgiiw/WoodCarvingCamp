@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
-
+using System.ComponentModel.DataAnnotations.Schema;
 using static WoodCarvingCamp.Data.Common.EntityValidationConstants.DiscountValidations;
 
 namespace WoodCarvingCamp.Data.Models
@@ -18,6 +18,7 @@ namespace WoodCarvingCamp.Data.Models
         public string Description { get; set; } = null!;
 
         [Required]
+        [Column(TypeName = "decimal(18, 2)")]
         public decimal DiscountPercent { get; set; }
 
         [Required]

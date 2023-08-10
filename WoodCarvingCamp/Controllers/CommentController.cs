@@ -23,7 +23,7 @@ namespace WoodCarvingCamp.Web.Controllers
 
             if (!ModelState.IsValid)
             {
-                return this.View(model);
+                throw new Exception();
             }
 
             try
