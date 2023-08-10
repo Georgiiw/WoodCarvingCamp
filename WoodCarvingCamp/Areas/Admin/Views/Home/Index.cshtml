@@ -1,3 +1,18 @@
-﻿<a asp-area="" asp-controller="Course" asp-action="Add" class="btn btn-primary">Add Course</a>
-<a asp-area="" asp-controller="Gallery" asp-action="Add" class="btn btn-primary">Add Photo</a>
-<a asp-area="" asp-controller="Shop" asp-action="Add" class="btn btn-primary">Add Product</a>
+﻿@{
+	ViewData["Title"] = "Admin Panel";
+}
+<h2 class="text-center">@ViewBag.Title</h2>
+
+<div class="container text-center">
+  <div class="row">
+    <div class="col">
+      <a asp-area="" asp-controller="Course" asp-action="Add" class="btn btn-primary">Add Course</a>
+    </div>
+    <div class="col">
+      <a asp-area="" asp-controller="Gallery" asp-action="Add" class="btn btn-primary">Add Photo</a>
+    </div>
+    <div class="col">
+     <a asp-area="" asp-controller="Shop" asp-action="Add" class="btn btn-primary">Add Product</a>
+    </div>
+  </div>
+</div>

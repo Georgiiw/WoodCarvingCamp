@@ -24,6 +24,7 @@ namespace WoodCarvingCamp.Services.Data
         {
             GalleryPhoto newPhoto = new GalleryPhoto
             {
+                Title = model.Title,
                 Description = model.Description,
                 ImageUrl = model.ImageUrl,
                 CreatedOn = DateTime.Now
@@ -39,7 +40,8 @@ namespace WoodCarvingCamp.Services.Data
                 .GalleryPhotos
                 .Select(gp => new GalleryPhotoViewModel
                 {
-                    Id = gp.Id,                   
+                    Id = gp.Id,     
+                    Title = gp.Title,
                     Description = gp.Description,
                     ImageUrl = gp.ImageUrl,
                     Comments = gp.Comments
@@ -67,6 +69,7 @@ namespace WoodCarvingCamp.Services.Data
             GalleryPhotoViewModel model = new GalleryPhotoViewModel
             {
                 Id = photo.Id,
+                Title = photo.Title,
                 Description = photo.Description,
                 ImageUrl = photo.ImageUrl,
                 Comments = comments

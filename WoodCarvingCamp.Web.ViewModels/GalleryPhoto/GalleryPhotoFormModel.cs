@@ -11,9 +11,13 @@ namespace WoodCarvingCamp.Web.ViewModels.GalleryPhoto
     public class GalleryPhotoFormModel
     {
         [Required]
+        [StringLength(TitleMaxLength, MinimumLength = TitleMinLength)]
+        public string Title { get; set; } = null!;
+        [Required]
         [StringLength(DescriptionMaxLength, MinimumLength = DescriptionMinLength)]
         public string Description { get; set; } = null!;
         [Required]
+		[Display(Name = "Image Path")]
         public string ImageUrl { get; set; } = null!;
         [Required]
         public DateTime CreatedOn { get; set; }

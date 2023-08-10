@@ -1,26 +1,23 @@
 ﻿@model IEnumerable<GalleryPhotoViewModel>
+
 <h1 class="text-center" style="color: #ffffff">Carving Projects Gallery</h1>
 
-@if (User.IsAdmin())
-{
-	<div>
-		<div class="d-grid gap-2 col-6 mx-auto">
-			<a asp-controller="Gallery" asp-action="Add" class="btn btn-primary">Add Photo</a>
-		</div>
-	</div>
-}
-@foreach (var photo in Model)
-{
-	<div class="card" style="width: 25rem;">
-		<p>
+<div class="col">
+	<div class="gallery-image">
+		@foreach (var photo in Model)
+		{
+			<div class="imageBackground"></div>
 			<a asp-controller="Gallery" asp-action="Details" asp-route-id="@photo.Id">
-				<img src="@photo.ImageUrl" class="card-img-top" title="Details">
+				<div class="img-box">
+					<img src="@photo.ImageUrl" title="Details">
+					<div class="transparent-box">
+						<div class="caption">
+							<p>@photo.Title</p>
+							<p class="opacity-low">Cinematic</p>
+						</div>
+					</div>
+				</div>
 			</a>
-		</p>
-
-		<div class="card-body">
-
-		</div>
+		}
 	</div>
-
-}
+</div>

@@ -1,9 +1,7 @@
 ﻿@model ShoppingCartViewModel
 
 <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-@{
-	decimal totalPrice = 0;
-}
+
 @if (Model != null && Model.CartItems.Count() > 0)
 {
 	<div class="small-container" id="cart-page">
@@ -34,8 +32,8 @@
 		<p>Total Price: <strong>$@Model.TotalPrice</strong></p>	
 	</div>	
 	
-	<a asp-controller="Cart" asp-action="Summary" class="btn btn-outline-primary">Summary</a>
 	<a asp-controller="Shop" asp-action="All" class="btn btn-outline-primary">Continue shopping!</a>
+	<a asp-controller="Cart" asp-action="Summary" class="btn btn-outline-primary">Summary</a>
 
 }
 else 

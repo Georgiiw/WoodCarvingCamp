@@ -25,7 +25,7 @@ namespace WoodCarvingCamp.Web.ViewModels.Shop
         public decimal Price { get; set; }
         [Required]
         [StringLength(ImageUrlMaxLength)]
-        [Display(Name = "Image Link")]
+        [Display(Name = "Image Path")]
         public string ImageUrl { get; set; } = null!;
         [Required]
         public DateTime CreatedOn { get; set; }

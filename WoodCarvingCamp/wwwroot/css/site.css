@@ -41,7 +41,7 @@ body {
 footer {
     margin-top: auto;
 }
-/*---Index View---*/
+/*---Index_View---*/
 .content{
     margin-top: 18%;
     font-size: 18px;
@@ -67,7 +67,7 @@ footer {
     cursor: pointer;
     overflow: auto;
 }
-/*---Add Course View---*/
+/*---Courses_Add---*/
 .form-label {
     color: #ffffff;
     font-size: 20px;
@@ -93,7 +93,7 @@ footer {
 .d-grid {
     padding: 10px;
 }
-/*---All Courses---*/
+/*---Courses_All---*/
 .card {
     margin-left: auto;
     margin-right: auto;
@@ -187,6 +187,7 @@ footer {
     margin: auto;   
     font-weight: 600;
 }
+
 /*---Login---*/
 #loginForm {
     display: grid;
@@ -236,8 +237,8 @@ footer {
 .text-danger {
     background: transparent;
 }
-/*---Shop---*/
 
+/*---Shop---*/
 #shopWrapper {
     background-color: antiquewhite;
     box-shadow: 0 0 40px 20px rgba(0,0,0,0.26);
@@ -315,6 +316,7 @@ footer {
     object-fit: cover;
     border-radius: 20px;
 }
+
 /*---Product_Details---*/
 img {
     width: 100%;
@@ -421,6 +423,82 @@ td{
     color: #ffffff;
     font-size: large;
 }
+/*---Gallery_Index---*/
 
+#photoId {
+    border-radius: 20px;
+    box-shadow: 0 0 10px 10px rgba(0,0,0,0.30);   
+    margin: auto;
+    margin-top: 20px;
+    border: solid 2px antiquewhite;
+}
+.gallery-image {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 
+.gallery-image img {
+    height: 250px;
+    width: 350px;
+    transform: scale(1.0);
+    transition: transform 0.4s ease;
+    box-shadow: 0 0 10px 10px rgba(0,0,0,0.30);
+    border: solid 2px antiquewhite;
+}
 
+.img-box {
+    box-sizing: content-box;
+    margin: 10px;
+    height: 250px;
+    width: 350px;
+    overflow: hidden;
+    display: inline-block;
+    color: white;
+    position: relative;
+    background-color: white;
+}
+
+.caption {
+    position: absolute;
+    bottom: 5px;
+    left: 20px;
+    opacity: 0.0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.transparent-box {
+    height: 250px;
+    width: 350px;
+    background-color: rgba(0, 0, 0, 0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: background-color 0.3s ease;
+}
+
+.img-box:hover img {
+    transform: scale(1.1);
+}
+
+.img-box:hover .transparent-box {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.img-box:hover .caption {
+    transform: translateY(-20px);
+    opacity: 1.0;
+}
+
+.img-box:hover {
+    cursor: pointer;
+}
+
+.caption > p:nth-child(2) {
+    font-size: 0.8em;
+}
+
+.opacity-low {
+    opacity: 0.5;
+}
