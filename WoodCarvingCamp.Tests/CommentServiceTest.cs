@@ -20,24 +20,11 @@ namespace WoodCarvingCamp.Tests
             var photo = new GalleryPhoto()
             {
                 Id = 1,
+                Title = "title",
                 Description = "photo desc photo desc photo desc photo desc photo desc",
                 ImageUrl = "imagePath",
                 CreatedOn = DateTime.Now
-            };
-            var comment = new Comment()
-            {
-                Id = 1,
-                Description = "My product desc! My product desc! My product desc! My product desc! ",               
-                CreatedOn = DateTime.UtcNow,
-                PhotoId = photo.Id
-            };
-            var model = new CommentFormModel()
-            {
-                Description = comment.Description
-            };
-            data.Comments.Add(comment);
-
-
+            }; 
             var user = new ApplicationUser()
             {
                 Id = Guid.NewGuid(),
@@ -46,6 +33,20 @@ namespace WoodCarvingCamp.Tests
                 Email = "pesho@abv.bg",
 
             };
+            var comment = new Comment()
+            {
+                Id = 1,
+                Description = "My product desc! My product desc! My product desc! My product desc! ",               
+                CreatedOn = DateTime.UtcNow,
+                CreatorName = $"{user.FirstName} {user.LastName}",
+                PhotoId = photo.Id
+            };
+            var model = new CommentFormModel()
+            {
+                Description = comment.Description
+            };
+
+            data.Comments.Add(comment);
             await data.Users.AddAsync(user);
             await data.Comments.AddAsync(comment);
             await data.GalleryPhotos.AddAsync(photo);
@@ -62,9 +63,18 @@ namespace WoodCarvingCamp.Tests
             using var data = DbMock.Instance;
             this.commentService = new CommentService(data);
 
+            var user = new ApplicationUser()
+            {
+                Id = Guid.NewGuid(),
+                FirstName = "pesho",
+                LastName = "peshev",
+                Email = "pesho@abv.bg",
+
+            };
             var photo = new GalleryPhoto()
             {
                 Id = 1,
+                Title = "title",
                 Description = "photo desc photo desc photo desc photo desc photo desc",
                 ImageUrl = "imagePath",
                 CreatedOn = DateTime.Now
@@ -74,6 +84,7 @@ namespace WoodCarvingCamp.Tests
                 Id = 1,
                 Description = "My product desc! My product desc! My product desc! My product desc! ",
                 CreatedOn = DateTime.UtcNow,
+                CreatorName = $"{user.FirstName} {user.LastName}",
                 PhotoId = photo.Id
             };
             var model = new CommentFormModel()
@@ -83,14 +94,6 @@ namespace WoodCarvingCamp.Tests
             data.Comments.Add(comment);
 
 
-            var user = new ApplicationUser()
-            {
-                Id = Guid.NewGuid(),
-                FirstName = "pesho",
-                LastName = "peshev",
-                Email = "pesho@abv.bg",
-
-            };
             await data.Users.AddAsync(user);
             await data.Comments.AddAsync(comment);
             await data.GalleryPhotos.AddAsync(photo);
@@ -110,15 +113,25 @@ namespace WoodCarvingCamp.Tests
             var photo = new GalleryPhoto()
             {
                 Id = 1,
+                Title = "title",
                 Description = "photo desc photo desc photo desc photo desc photo desc",
                 ImageUrl = "imagePath",
                 CreatedOn = DateTime.Now
+            };
+            var user = new ApplicationUser()
+            {
+                Id = Guid.NewGuid(),
+                FirstName = "pesho",
+                LastName = "peshev",
+                Email = "pesho@abv.bg",
+
             };
             var comment = new Comment()
             {
                 Id = 1,
                 Description = "My product desc! My product desc! My product desc! My product desc! ",
                 CreatedOn = DateTime.UtcNow,
+                CreatorName = $"{user.FirstName} {user.LastName}",
                 PhotoId = photo.Id
             };
             var model = new CommentFormModel()
@@ -128,14 +141,6 @@ namespace WoodCarvingCamp.Tests
             data.Comments.Add(comment);
 
 
-            var user = new ApplicationUser()
-            {
-                Id = Guid.NewGuid(),
-                FirstName = "pesho",
-                LastName = "peshev",
-                Email = "pesho@abv.bg",
-
-            };
             await data.Users.AddAsync(user);
             await data.Comments.AddAsync(comment);
             await data.GalleryPhotos.AddAsync(photo);
@@ -155,15 +160,25 @@ namespace WoodCarvingCamp.Tests
             var photo = new GalleryPhoto()
             {
                 Id = 1,
+                Title = "title",
                 Description = "photo desc photo desc photo desc photo desc photo desc",
                 ImageUrl = "imagePath",
                 CreatedOn = DateTime.Now
+            };
+            var user = new ApplicationUser()
+            {
+                Id = Guid.NewGuid(),
+                FirstName = "pesho",
+                LastName = "peshev",
+                Email = "pesho@abv.bg",
+
             };
             var comment = new Comment()
             {
                 Id = 1,
                 Description = "My product desc! My product desc! My product desc! My product desc! ",
                 CreatedOn = DateTime.UtcNow,
+                CreatorName = $"{user.FirstName} {user.LastName}",
                 PhotoId = photo.Id
             };
             var model = new CommentFormModel()
@@ -173,14 +188,7 @@ namespace WoodCarvingCamp.Tests
             data.Comments.Add(comment);
 
 
-            var user = new ApplicationUser()
-            {
-                Id = Guid.NewGuid(),
-                FirstName = "pesho",
-                LastName = "peshev",
-                Email = "pesho@abv.bg",
-
-            };
+         
             await data.Users.AddAsync(user);
             await data.Comments.AddAsync(comment);
             await data.GalleryPhotos.AddAsync(photo);
@@ -200,15 +208,25 @@ namespace WoodCarvingCamp.Tests
             var photo = new GalleryPhoto()
             {
                 Id = 1,
+                Title = "title",
                 Description = "photo desc photo desc photo desc photo desc photo desc",
                 ImageUrl = "imagePath",
                 CreatedOn = DateTime.Now
+            };
+            var user = new ApplicationUser()
+            {
+                Id = Guid.NewGuid(),
+                FirstName = "pesho",
+                LastName = "peshev",
+                Email = "pesho@abv.bg",
+
             };
             var comment = new Comment()
             {
                 Id = 1,
                 Description = "My product desc! My product desc! My product desc! My product desc! ",
                 CreatedOn = DateTime.UtcNow,
+                CreatorName = $"{user.FirstName} {user.LastName}",
                 PhotoId = photo.Id
             };
             var model = new CommentFormModel()
@@ -218,14 +236,6 @@ namespace WoodCarvingCamp.Tests
             data.Comments.Add(comment);
 
 
-            var user = new ApplicationUser()
-            {
-                Id = Guid.NewGuid(),
-                FirstName = "pesho",
-                LastName = "peshev",
-                Email = "pesho@abv.bg",
-
-            };
             await data.Users.AddAsync(user);
             await data.Comments.AddAsync(comment);
             await data.GalleryPhotos.AddAsync(photo);

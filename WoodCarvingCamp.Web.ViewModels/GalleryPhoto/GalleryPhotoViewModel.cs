@@ -12,12 +12,12 @@ namespace WoodCarvingCamp.Web.ViewModels.GalleryPhoto
     {
         public GalleryPhotoViewModel()
         {
-            Comments = new HashSet<Comment>();
+            Comments = new HashSet<CommentViewModel>();
         }
         public int Id { get; set; }
         public string Title { get; set; } = null!;
         public string Description { get; set; } = null!;
         public string ImageUrl { get; set; } = null!;
-        public ICollection<Comment> Comments { get; set; }
+        public ICollection<CommentViewModel> Comments { get; set; }
     }
 }

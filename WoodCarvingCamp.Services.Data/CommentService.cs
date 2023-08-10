@@ -43,6 +43,7 @@ namespace WoodCarvingCamp.Services.Data
             {
                 CreatorId = user.Id,
                 Creator = user,
+                CreatorName = $"{user.FirstName} {user.LastName}",
                 Description = model.Description,
                 CreatedOn = DateTime.UtcNow,
                 PhotoId = photo.Id,

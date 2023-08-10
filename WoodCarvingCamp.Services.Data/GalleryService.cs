@@ -8,6 +8,7 @@ using WoodCarvingCamp.Data;
 using WoodCarvingCamp.Data.Models;
 using WoodCarvingCamp.Services.Data.Interfaces;
 using WoodCarvingCamp.Web.ViewModels.GalleryPhoto;
+using WoodCarvingCamp.Web.ViewModels.UserComment;
 
 namespace WoodCarvingCamp.Services.Data
 {
@@ -43,8 +44,7 @@ namespace WoodCarvingCamp.Services.Data
                     Id = gp.Id,     
                     Title = gp.Title,
                     Description = gp.Description,
-                    ImageUrl = gp.ImageUrl,
-                    Comments = gp.Comments
+                    ImageUrl = gp.ImageUrl,                   
                 }).ToListAsync();
 
             return photos;
@@ -58,15 +58,36 @@ namespace WoodCarvingCamp.Services.Data
             return result;
         }
 
-        public async Task<GalleryPhotoViewModel> GetDetailsByIdAsync(string id)
+        public async Task<ICollection<CommentViewModel>> GetCommentsByPhotoId(string photoId)
+		{
+            GalleryPhoto photo = await this.dbContext.GalleryPhotos
+                .FirstAsync(p => p.Id.ToString() == photoId);
+
+            ICollection<CommentViewModel> comments = await dbContext
+                .Comments.Where(c => c.PhotoId == photo.Id)
+                .Select(c => new CommentViewModel
+                {
+                    Id = c.Id,
+                    CreatorName = c.CreatorName,
+                    Description = c.Description,
+                    CreatedOn = c.CreatedOn,   
+                    CreatorId = c.CreatorId.ToString().ToLower()
+                }).ToListAsync();
+
+            return comments;
+        }
+
+		public async Task<GalleryPhotoViewModel> GetDetailsByIdAsync(string id)
         {
             GalleryPhoto photo = await this.dbContext.GalleryPhotos
                 .FirstAsync(p => p.Id.ToString() == id);
 
-            ICollection<Comment> comments = await this.dbContext.Comments
-                .Where(c => c.PhotoId == photo.Id).ToListAsync();
+			//ICollection<Comment> comments = await this.dbContext.Comments
+			//      .Where(c => c.PhotoId == photo.Id).ToListAsync();
 
-            GalleryPhotoViewModel model = new GalleryPhotoViewModel
+			var comments = await GetCommentsByPhotoId(photo.Id.ToString());
+
+			GalleryPhotoViewModel model = new GalleryPhotoViewModel
             {
                 Id = photo.Id,
                 Title = photo.Title,
@@ -78,5 +99,6 @@ namespace WoodCarvingCamp.Services.Data
             return model;
            
         }
-    }
+
+	}
 }

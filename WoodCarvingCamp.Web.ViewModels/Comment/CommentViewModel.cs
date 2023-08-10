@@ -9,8 +9,11 @@ namespace WoodCarvingCamp.Web.ViewModels.UserComment
 {
     public class CommentViewModel
     {
-        public int Id { get; set; }
-        public Comment Comment { get; set; } = null!;
+		public int Id { get; set; }		
+		public DateTime CreatedOn { get; set; }
+		public string Description { get; set; } = null!;
+		public string CreatorId { get; set; } = null!;
+		public string CreatorName { get; set; } = null!;
 
-    }
+	}
 }
