@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using WoodCarvingCamp.Web.ViewModels;
-
+using static WoodCarvingCamp.Common.AdminUserValidations.AdminValidations;
 namespace WoodCarvingCamp.Controllers
 {
     public class HomeController : Controller
@@ -15,6 +15,10 @@ namespace WoodCarvingCamp.Controllers
 
         public IActionResult Index()
         {
+			if (this.User.IsInRole(AdminRoleName))
+			{
+                return this.RedirectToAction("Index", "Home", new {Area =AdminAreaName});
+			}
             return View();
         }
 

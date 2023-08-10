@@ -62,6 +62,7 @@ namespace WoodCarvingCamp
             if (app.Environment.IsDevelopment())
             {
                 app.UseMigrationsEndPoint();
+                app.UseDeveloperExceptionPage();
             }
             else
             {
@@ -80,11 +81,18 @@ namespace WoodCarvingCamp
             app.UseAuthorization();
 
             app.SeedAdministrator(AdminEmail);
-
-            app.MapControllerRoute(
-                name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
-            app.MapRazorPages();
+            app.UseEndpoints(config =>
+            {
+                config.MapControllerRoute(
+                    name: "areas",
+                    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+                );
+                config.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                config.MapDefaultControllerRoute();
+                config.MapRazorPages();
+        });           
 
             app.Run();
         }

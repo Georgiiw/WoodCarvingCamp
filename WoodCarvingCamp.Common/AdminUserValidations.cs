@@ -6,6 +6,7 @@
         {
             public const string AdminEmail = "admin@woodcarvingcamp.bg";
             public const string AdminRoleName = "Administrator";
+            public const string AdminAreaName = "Admin";
         }
     }
 }
