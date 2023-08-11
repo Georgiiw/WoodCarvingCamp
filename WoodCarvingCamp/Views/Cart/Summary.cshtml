@@ -8,21 +8,24 @@
 	<h4 class="d-flex justify-content-between align-items-center mb-3">
 		<span style="color: #ffffff">Order Summary:</span>
 	</h4>
-	<ul class="list-group mb-3">
-		@foreach (var item in Model.CartItems)
-		{
-			<li class="list-group-item d-flex justify-content-between">
-				<div>
-					<h6 class="my-0">@item.Product.Name</h6>
-				</div>
-				<div>
-					<h6 class="my-0">@item.Quantity</h6>
-				</div>
-				<span class="text-muted">$@item.Product.Price </span>
-				<span class="text-muted">$@Model.TotalPrice</span>
-			</li>
-		}
-	</ul>
+	<div class="small-container" >
+		<table>
+			@foreach (var item in Model.CartItems)
+			{
+				decimal price = item.Product.Price * item.Quantity;
+				<tr>
+					<th>Name: @item.Product.Name</th>
+					<th>Quantity: @item.Quantity</th>
+					<th>Price: $@price</th>
+					<th>Single Price: $@item.Product.Price </th>
+				</tr>
+			}
+		</table>
+	</div>
+	<hr style="border-top: 2px solid antiquewhite;">
+	<div class="total-price">
+		<p>Total Price: <strong>$@Model.TotalPrice</strong></p>	
+	</div>	
 	<div class="col-12 col-md-4">
 		@{
 			var StripeTotalPrice = Model.TotalPrice * 100;
