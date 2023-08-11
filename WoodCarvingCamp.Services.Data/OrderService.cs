@@ -28,6 +28,10 @@ namespace WoodCarvingCamp.Services.Data
             ApplicationUser? user =  this.dbContext
                .Users
                .FirstOrDefault(u => u.Id.ToString() == userId);
+            if (user == null)
+            {
+                throw new ArgumentException("User Not Found!");
+            }
             List<CartItem> cartItems = new List<CartItem>();
 
             foreach (var item in model.Products)
