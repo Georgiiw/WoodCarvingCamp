@@ -1,49 +1,61 @@
 ﻿@model GalleryPhotoViewModel
 
 
-<div class="container" >
-    <div class="row">
-        <div class="col-4">
-            <img class="d-block w-100" src="@Model.ImageUrl">
-            <a asp-controller="Gallery" asp-action="Delete" asp-route-id="@Model.Id"
-							   class="btn btn-danger">Delete</a>
-        </div>
-        <div class="card col-10 border-0">
-                  
-            <p>@Model.Description</p>
-            <div class="form-control">
-                <div>
-                    <form asp-controller="Comment" asp-action="Add" asp-route-id="@Model.Id" method="post">
-                       <div class="mb-3">
-			            <label asp-for="Description" >Add Comment</label>
-			            <input asp-for="Description" class="form-control" rows="3" aria-required="true">
-			            
-		                </div>
-                        <button type="submit" class="btn btn-primary" value="Add">Comment</button>
-                    </form>
+<div class="container">
+	<div class="row">
+		<div>
+			<h2 class="text-center">@Model.Title</h2>
+			<img class="d-block w-100" id="photoId" src="@Model.ImageUrl">
+			@if (User.IsAdmin())
+			{
+				<a asp-controller="Gallery" asp-action="Delete" asp-route-id="@Model.Id"
+			   class="btn btn-danger">Delete</a>
+			}
+		</div>
+		<div>
+			<div class="add-comment-thread">
+				<form asp-controller="Comment" asp-action="Add" asp-route-id="@Model.Id" method="post">
+					<div class="add-comment-inputs">
+						<label asp-for="Description"><strong>Add Comment</strong></label>
+						<input asp-for="Description" value="" placeholder="Comment here..." rows="3" aria-required="true">
 
-                </div>
-            </div>
-            <div>
-                @if (Model.Comments.Any())
-                {
-                    @foreach (var comment in Model.Comments)
-                    {                      
-                        <p>@comment.CreatorName</p>
-                        <p>@comment.Description</p>                       
-                        @if (User.UserId() == @comment.CreatorId.ToString() || User.IsAdmin())
-                        {
-                            <a asp-controller="Comment" asp-action="Delete" asp-route-id="
-                                    @comment.Id" class="btn btn-danger">Delete</a>
-                            
-                        }
-                    }                   
-                }
-                else
-                {
-                    <p>No comments yet!</p>
-                }
-            </div>
-        </div>
-    </div>
+					</div>
+					<button type="submit" class="btn btn-primary" value="Add">Comment</button>
+				</form>
+			</div>
+			<div>
+				<div class="comment-thread">
+					<h5 class="text-center" style="color: black">Comments</h5>
+					@if (Model.Comments.Any())
+					{
+						<!---Comments--->
+						@foreach (var comment in Model.Comments)
+						{
+							<div class="comment" id="comments">
+								<div class="comment-heading">									
+									<p class="comment-author"><strong>@comment.CreatorName:</strong></p>	
+									<p>@comment.CreatedOn.ToShortDateString()</p>
+									
+								</div>
+								<div class="comment-body">
+									<p>- @comment.Description</p>
+								</div>
+								@if (User.UserId() == @comment.CreatorId.ToString() || User.IsAdmin())
+								{
+									<a asp-controller="Comment" asp-action="Delete" asp-route-id="
+										@comment.Id" class="btn btn-danger">Delete</a>
+
+								}
+							</div>
+							<hr style="border-top: 2px solid black;">
+						}
+					}
+					else
+					{
+						<p class="text-center" style="color: black">No comments yet!</p>
+					}
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

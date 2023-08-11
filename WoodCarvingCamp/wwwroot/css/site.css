@@ -80,8 +80,7 @@ footer {
     color: #ffffff;
     font-size: 20px;
 }
-.text-center {
-    font-size: 50px;
+.text-center {    
     margin-top: 20px;
     color: #ffffff;
 }
@@ -501,4 +500,48 @@ td{
 
 .opacity-low {
     opacity: 0.5;
+}
+/*---Gallery_Comment*/
+.comment {
+    position: relative;
+    margin: 20px auto;
+}
+.comment-thread {
+    width: 700px;
+    max-width: 100%;
+    margin: auto;
+    padding: 0 30px;
+    background-color: antiquewhite;
+    border: 1px solid #ffffff;
+    border-radius: 20px;
+    overflow: auto;
+}
+.comment-heading {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    font-size: 14px;
+}
+
+.comment-author {
+    color: rgba(0, 0, 0, 0.85);
+    font-weight: 400;
+    font-size: 18px;
+    text-decoration: none;
+}
+.add-comment-thread {
+    background-color: antiquewhite;
+    border-radius: 20px;
+    width: auto;
+    margin: 20px auto auto;
+    width: 700px;
+    max-width: 100%;
+    padding: 15px;
+    border: solid 5px black;
+    overflow: auto;
+}
+.add-comment-inputs input{
+    width: 100%;
+    margin: 10px 0;
+  
 }

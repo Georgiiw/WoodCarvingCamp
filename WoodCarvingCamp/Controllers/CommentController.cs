@@ -36,7 +36,7 @@ namespace WoodCarvingCamp.Web.Controllers
                 throw;
             }
 
-            return RedirectToAction("Index", "Gallery");
+            return this.Redirect($"/Gallery/Details/{id}");
         }
         public async Task<IActionResult> Delete([FromRoute] int id)
         {           
