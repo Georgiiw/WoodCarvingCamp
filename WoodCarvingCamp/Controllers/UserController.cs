@@ -81,10 +81,11 @@ namespace WoodCarvingCamp.Web.Controllers
             }
 
             var result = await this.signInManager
-                .PasswordSignInAsync(model.Email, model.Password, false, false);
+                .PasswordSignInAsync(model.Email, model.Password, model.RememberMe, false);
 
             if (!result.Succeeded)
             {
+                TempData[ErrorMessage] = "An error occured while logging you in!";
                 return this.View(model);
             }
             TempData[SuccessMessage] = "Successfuly logged in!";
