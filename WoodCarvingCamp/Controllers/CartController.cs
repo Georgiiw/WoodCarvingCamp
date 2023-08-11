@@ -5,7 +5,7 @@ using System.Security.Claims;
 using WoodCarvingCamp.Services.Data.Interfaces;
 using WoodCarvingCamp.Web.ViewModels.Cart;
 using WoodCarvingCamp.Web.ViewModels.Order;
-
+using static WoodCarvingCamp.Common.NotificationMessagesConstants;
 namespace WoodCarvingCamp.Web.Controllers
 {
     [Authorize]
@@ -33,14 +33,15 @@ namespace WoodCarvingCamp.Web.Controllers
             try
             {
                 await this.cartService.AddProductToCart(id, userId);
-                TempData["message"] = "Successfully added to cart";
 
             }
             catch (Exception)
-            {              
+            {
+                TempData[ErrorMessage] = "There was an error while adding your product to cart!";
                 return RedirectToAction("All", "Shop");
             }
 
+            TempData[SuccessMessage] = "Successfully added to cart";
             return RedirectToAction("Index", "Cart");
         }
 
