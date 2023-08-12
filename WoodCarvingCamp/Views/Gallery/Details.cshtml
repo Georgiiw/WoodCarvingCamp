@@ -1,5 +1,7 @@
 ﻿@model GalleryPhotoViewModel
-
+@using WoodCarvingCamp.Data.Models
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> SignInManager
 
 <div class="container">
 	<div class="row">
@@ -14,14 +16,21 @@
 		</div>
 		<div>
 			<div class="add-comment-thread">
-				<form asp-controller="Comment" asp-action="Add" asp-route-id="@Model.Id" method="post">
-					<div class="add-comment-inputs">
-						<label asp-for="Description"><strong>Add Comment</strong></label>
-						<input asp-for="Description" value="" placeholder="Comment here..." rows="3" aria-required="true">
+				@if(SignInManager.IsSignedIn(User))
+				{
+					<form asp-controller="Comment" asp-action="Add" asp-route-id="@Model.Id" method="post">
+						<div class="add-comment-inputs">
+							<label asp-for="Description"><strong>Add Comment</strong></label>
+							<input asp-for="Description" value="" placeholder="Comment here..." rows="3" aria-required="true">
 
-					</div>
-					<button type="submit" class="btn btn-primary" value="Add">Comment</button>
-				</form>
+						</div>
+						<button type="submit" class="btn btn-primary" value="Add">Comment</button>
+					</form>
+				}
+				else
+				{
+					<p>You need to be logged in to leave a comment. - <a class="navbar-brand" asp-area=""asp-controller="User" asp-action="Login">Login</a></p>
+				}		
 			</div>
 			<div>
 				<div class="comment-thread">
