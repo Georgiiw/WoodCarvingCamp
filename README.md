@@ -29,6 +29,9 @@ My first **ASP.NET MVC** project - The Wood Carving Camp, made as final exam for
 - User:
   - email/username: pesho@abv.bg;
   -  password: pesho123;
+## Payment card
+- Number: 4242 4242 4242 4242
+- Date: 12/42 CVC: 424
 ## Screenshots
 ### Home page
 ![Home page](https://github.com/Georgiiw/WoodCarvingCamp/assets/92953898/16ddf119-ff3f-43d9-9d35-8e6d22366d39)
@@ -37,6 +40,8 @@ My first **ASP.NET MVC** project - The Wood Carving Camp, made as final exam for
 ![Product details page](https://github.com/Georgiiw/WoodCarvingCamp/assets/92953898/c1697e20-0290-4bc0-829a-f4f497143252)
 ### Galley page with image hover
 ![Galley with image hoverd](https://github.com/Georgiiw/WoodCarvingCamp/assets/92953898/c2e67ef9-e54f-4388-865d-764711486336)
+### Comments
+![Comments page](https://github.com/Georgiiw/WoodCarvingCamp/assets/92953898/eb9f9140-a209-4df0-aba5-f698c6db73e1)
 ### Logged in user cart - empty/with items
 ![Logged in user cart no items](https://github.com/Georgiiw/WoodCarvingCamp/assets/92953898/c6d33920-3bba-4fd1-b079-489032ad97cf)
 ![Cart with products in](https://github.com/Georgiiw/WoodCarvingCamp/assets/92953898/fb1cd13a-e6ec-4bf4-b083-7abaf9b486f2)
